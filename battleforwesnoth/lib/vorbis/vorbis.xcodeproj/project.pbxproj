@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CBF24551644FBD5008D46F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBF24541644FBD5008D46F4 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3CBF244F1644FBD5008D46F4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3CBF24511644FBD5008D46F4 /* libvorbis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvorbis.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CBF24541644FBD5008D46F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3CBF24581644FBD5008D46F4 /* vorbis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vorbis-Prefix.pch"; sourceTree = "<group>"; };
+		3CBF24691644FCC3008D46F4 /* analysis.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = analysis.c; path = "../../../../lib/libvorbis-1.3.3/lib/analysis.c"; sourceTree = "<group>"; };
+		3CBF246A1644FCC3008D46F4 /* backends.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backends.h; path = "../../../../lib/libvorbis-1.3.3/lib/backends.h"; sourceTree = "<group>"; };
+		3CBF246B1644FCC3008D46F4 /* barkmel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = barkmel.c; path = "../../../../lib/libvorbis-1.3.3/lib/barkmel.c"; sourceTree = "<group>"; };
+		3CBF246C1644FCC3008D46F4 /* bitrate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = bitrate.c; path = "../../../../lib/libvorbis-1.3.3/lib/bitrate.c"; sourceTree = "<group>"; };
+		3CBF246D1644FCC3008D46F4 /* bitrate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bitrate.h; path = "../../../../lib/libvorbis-1.3.3/lib/bitrate.h"; sourceTree = "<group>"; };
+		3CBF246E1644FCC3008D46F4 /* block.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = block.c; path = "../../../../lib/libvorbis-1.3.3/lib/block.c"; sourceTree = "<group>"; };
+		3CBF246F1644FCC3008D46F4 /* codebook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = codebook.c; path = "../../../../lib/libvorbis-1.3.3/lib/codebook.c"; sourceTree = "<group>"; };
+		3CBF24701644FCC3008D46F4 /* codebook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = codebook.h; path = "../../../../lib/libvorbis-1.3.3/lib/codebook.h"; sourceTree = "<group>"; };
+		3CBF24711644FCC3008D46F4 /* codec_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = codec_internal.h; path = "../../../../lib/libvorbis-1.3.3/lib/codec_internal.h"; sourceTree = "<group>"; };
+		3CBF24721644FCC3008D46F4 /* envelope.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = envelope.c; path = "../../../../lib/libvorbis-1.3.3/lib/envelope.c"; sourceTree = "<group>"; };
+		3CBF24731644FCC3008D46F4 /* envelope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = envelope.h; path = "../../../../lib/libvorbis-1.3.3/lib/envelope.h"; sourceTree = "<group>"; };
+		3CBF24741644FCC3008D46F4 /* floor0.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = floor0.c; path = "../../../../lib/libvorbis-1.3.3/lib/floor0.c"; sourceTree = "<group>"; };
+		3CBF24751644FCC3008D46F4 /* floor1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = floor1.c; path = "../../../../lib/libvorbis-1.3.3/lib/floor1.c"; sourceTree = "<group>"; };
+		3CBF24761644FCC3008D46F4 /* highlevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = highlevel.h; path = "../../../../lib/libvorbis-1.3.3/lib/highlevel.h"; sourceTree = "<group>"; };
+		3CBF24771644FCC3008D46F4 /* info.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = info.c; path = "../../../../lib/libvorbis-1.3.3/lib/info.c"; sourceTree = "<group>"; };
+		3CBF24781644FCC3008D46F4 /* lookup_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lookup_data.h; path = "../../../../lib/libvorbis-1.3.3/lib/lookup_data.h"; sourceTree = "<group>"; };
+		3CBF24791644FCC3008D46F4 /* lookup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = lookup.c; path = "../../../../lib/libvorbis-1.3.3/lib/lookup.c"; sourceTree = "<group>"; };
+		3CBF247A1644FCC3008D46F4 /* lookup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lookup.h; path = "../../../../lib/libvorbis-1.3.3/lib/lookup.h"; sourceTree = "<group>"; };
+		3CBF247B1644FCC3008D46F4 /* lpc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = lpc.c; path = "../../../../lib/libvorbis-1.3.3/lib/lpc.c"; sourceTree = "<group>"; };
+		3CBF247C1644FCC3008D46F4 /* lpc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lpc.h; path = "../../../../lib/libvorbis-1.3.3/lib/lpc.h"; sourceTree = "<group>"; };
+		3CBF247D1644FCC3008D46F4 /* lsp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = lsp.c; path = "../../../../lib/libvorbis-1.3.3/lib/lsp.c"; sourceTree = "<group>"; };
+		3CBF247E1644FCC3008D46F4 /* lsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lsp.h; path = "../../../../lib/libvorbis-1.3.3/lib/lsp.h"; sourceTree = "<group>"; };
+		3CBF247F1644FCC3008D46F4 /* mapping0.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mapping0.c; path = "../../../../lib/libvorbis-1.3.3/lib/mapping0.c"; sourceTree = "<group>"; };
+		3CBF24801644FCC3008D46F4 /* masking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = masking.h; path = "../../../../lib/libvorbis-1.3.3/lib/masking.h"; sourceTree = "<group>"; };
+		3CBF24811644FCC3008D46F4 /* mdct.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mdct.c; path = "../../../../lib/libvorbis-1.3.3/lib/mdct.c"; sourceTree = "<group>"; };
+		3CBF24821644FCC3008D46F4 /* mdct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mdct.h; path = "../../../../lib/libvorbis-1.3.3/lib/mdct.h"; sourceTree = "<group>"; };
+		3CBF24831644FCC3008D46F4 /* misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = misc.h; path = "../../../../lib/libvorbis-1.3.3/lib/misc.h"; sourceTree = "<group>"; };
+		3CBF24841644FCC3008D46F4 /* os.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = os.h; path = "../../../../lib/libvorbis-1.3.3/lib/os.h"; sourceTree = "<group>"; };
+		3CBF24851644FCC3008D46F4 /* psy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = psy.c; path = "../../../../lib/libvorbis-1.3.3/lib/psy.c"; sourceTree = "<group>"; };
+		3CBF24861644FCC3008D46F4 /* psy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = psy.h; path = "../../../../lib/libvorbis-1.3.3/lib/psy.h"; sourceTree = "<group>"; };
+		3CBF24871644FCC3008D46F4 /* psytune.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = psytune.c; path = "../../../../lib/libvorbis-1.3.3/lib/psytune.c"; sourceTree = "<group>"; };
+		3CBF24881644FCC3008D46F4 /* registry.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = registry.c; path = "../../../../lib/libvorbis-1.3.3/lib/registry.c"; sourceTree = "<group>"; };
+		3CBF24891644FCC3008D46F4 /* registry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = registry.h; path = "../../../../lib/libvorbis-1.3.3/lib/registry.h"; sourceTree = "<group>"; };
+		3CBF248A1644FCC3008D46F4 /* res0.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = res0.c; path = "../../../../lib/libvorbis-1.3.3/lib/res0.c"; sourceTree = "<group>"; };
+		3CBF248B1644FCC3008D46F4 /* scales.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = scales.h; path = "../../../../lib/libvorbis-1.3.3/lib/scales.h"; sourceTree = "<group>"; };
+		3CBF248C1644FCC3008D46F4 /* sharedbook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = sharedbook.c; path = "../../../../lib/libvorbis-1.3.3/lib/sharedbook.c"; sourceTree = "<group>"; };
+		3CBF248D1644FCC3008D46F4 /* smallft.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = smallft.c; path = "../../../../lib/libvorbis-1.3.3/lib/smallft.c"; sourceTree = "<group>"; };
+		3CBF248E1644FCC3008D46F4 /* smallft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = smallft.h; path = "../../../../lib/libvorbis-1.3.3/lib/smallft.h"; sourceTree = "<group>"; };
+		3CBF248F1644FCC3008D46F4 /* synthesis.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = synthesis.c; path = "../../../../lib/libvorbis-1.3.3/lib/synthesis.c"; sourceTree = "<group>"; };
+		3CBF24901644FCC3008D46F4 /* tone.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = tone.c; path = "../../../../lib/libvorbis-1.3.3/lib/tone.c"; sourceTree = "<group>"; };
+		3CBF24911644FCC3008D46F4 /* vorbisenc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vorbisenc.c; path = "../../../../lib/libvorbis-1.3.3/lib/vorbisenc.c"; sourceTree = "<group>"; };
+		3CBF24921644FCC3008D46F4 /* vorbisfile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vorbisfile.c; path = "../../../../lib/libvorbis-1.3.3/lib/vorbisfile.c"; sourceTree = "<group>"; };
+		3CBF24931644FCC3008D46F4 /* window.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = window.c; path = "../../../../lib/libvorbis-1.3.3/lib/window.c"; sourceTree = "<group>"; };
+		3CBF24941644FCC3008D46F4 /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = window.h; path = "../../../../lib/libvorbis-1.3.3/lib/window.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CBF244E1644FBD5008D46F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CBF24551644FBD5008D46F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CBF24461644FBD5008D46F4 = {
+			isa = PBXGroup;
+			children = (
+				3CBF24561644FBD5008D46F4 /* vorbis */,
+				3CBF24531644FBD5008D46F4 /* Frameworks */,
+				3CBF24521644FBD5008D46F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3CBF24521644FBD5008D46F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CBF24511644FBD5008D46F4 /* libvorbis.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CBF24531644FBD5008D46F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CBF24541644FBD5008D46F4 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CBF24561644FBD5008D46F4 /* vorbis */ = {
+			isa = PBXGroup;
+			children = (
+				3CBF24691644FCC3008D46F4 /* analysis.c */,
+				3CBF246A1644FCC3008D46F4 /* backends.h */,
+				3CBF246B1644FCC3008D46F4 /* barkmel.c */,
+				3CBF246C1644FCC3008D46F4 /* bitrate.c */,
+				3CBF246D1644FCC3008D46F4 /* bitrate.h */,
+				3CBF246E1644FCC3008D46F4 /* block.c */,
+				3CBF246F1644FCC3008D46F4 /* codebook.c */,
+				3CBF24701644FCC3008D46F4 /* codebook.h */,
+				3CBF24711644FCC3008D46F4 /* codec_internal.h */,
+				3CBF24721644FCC3008D46F4 /* envelope.c */,
+				3CBF24731644FCC3008D46F4 /* envelope.h */,
+				3CBF24741644FCC3008D46F4 /* floor0.c */,
+				3CBF24751644FCC3008D46F4 /* floor1.c */,
+				3CBF24761644FCC3008D46F4 /* highlevel.h */,
+				3CBF24771644FCC3008D46F4 /* info.c */,
+				3CBF24781644FCC3008D46F4 /* lookup_data.h */,
+				3CBF24791644FCC3008D46F4 /* lookup.c */,
+				3CBF247A1644FCC3008D46F4 /* lookup.h */,
+				3CBF247B1644FCC3008D46F4 /* lpc.c */,
+				3CBF247C1644FCC3008D46F4 /* lpc.h */,
+				3CBF247D1644FCC3008D46F4 /* lsp.c */,
+				3CBF247E1644FCC3008D46F4 /* lsp.h */,
+				3CBF247F1644FCC3008D46F4 /* mapping0.c */,
+				3CBF24801644FCC3008D46F4 /* masking.h */,
+				3CBF24811644FCC3008D46F4 /* mdct.c */,
+				3CBF24821644FCC3008D46F4 /* mdct.h */,
+				3CBF24831644FCC3008D46F4 /* misc.h */,
+				3CBF24841644FCC3008D46F4 /* os.h */,
+				3CBF24851644FCC3008D46F4 /* psy.c */,
+				3CBF24861644FCC3008D46F4 /* psy.h */,
+				3CBF24871644FCC3008D46F4 /* psytune.c */,
+				3CBF24881644FCC3008D46F4 /* registry.c */,
+				3CBF24891644FCC3008D46F4 /* registry.h */,
+				3CBF248A1644FCC3008D46F4 /* res0.c */,
+				3CBF248B1644FCC3008D46F4 /* scales.h */,
+				3CBF248C1644FCC3008D46F4 /* sharedbook.c */,
+				3CBF248D1644FCC3008D46F4 /* smallft.c */,
+				3CBF248E1644FCC3008D46F4 /* smallft.h */,
+				3CBF248F1644FCC3008D46F4 /* synthesis.c */,
+				3CBF24901644FCC3008D46F4 /* tone.c */,
+				3CBF24911644FCC3008D46F4 /* vorbisenc.c */,
+				3CBF24921644FCC3008D46F4 /* vorbisfile.c */,
+				3CBF24931644FCC3008D46F4 /* window.c */,
+				3CBF24941644FCC3008D46F4 /* window.h */,
+				3CBF24571644FBD5008D46F4 /* Supporting Files */,
+			);
+			path = vorbis;
+			sourceTree = "<group>";
+		};
+		3CBF24571644FBD5008D46F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CBF24581644FBD5008D46F4 /* vorbis-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CBF24501644FBD5008D46F4 /* vorbis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CBF245F1644FBD5008D46F4 /* Build configuration list for PBXNativeTarget "vorbis" */;
+			buildPhases = (
+				3CBF244D1644FBD5008D46F4 /* Sources */,
+				3CBF244E1644FBD5008D46F4 /* Frameworks */,
+				3CBF244F1644FBD5008D46F4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vorbis;
+			productName = vorbis;
+			productReference = 3CBF24511644FBD5008D46F4 /* libvorbis.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3CBF24481644FBD5008D46F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3CBF244B1644FBD5008D46F4 /* Build configuration list for PBXProject "vorbis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3CBF24461644FBD5008D46F4;
+			productRefGroup = 3CBF24521644FBD5008D46F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CBF24501644FBD5008D46F4 /* vorbis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CBF244D1644FBD5008D46F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3CBF245D1644FBD5008D46F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3CBF245E1644FBD5008D46F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CBF24601644FBD5008D46F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/vorbis.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vorbis/vorbis-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/libvorbis-1.3.3/lib\"",
+					"\"$(SRCROOT)/../../../lib/libvorbis-1.3.3/include\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.3.0/include\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.3.0/include/ogg\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3CBF24611644FBD5008D46F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/vorbis.dst;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vorbis/vorbis-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/libvorbis-1.3.3/lib\"",
+					"\"$(SRCROOT)/../../../lib/libvorbis-1.3.3/include\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.3.0/include\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.3.0/include/ogg\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CBF244B1644FBD5008D46F4 /* Build configuration list for PBXProject "vorbis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CBF245D1644FBD5008D46F4 /* Debug */,
+				3CBF245E1644FBD5008D46F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CBF245F1644FBD5008D46F4 /* Build configuration list for PBXNativeTarget "vorbis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CBF24601644FBD5008D46F4 /* Debug */,
+				3CBF24611644FBD5008D46F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CBF24481644FBD5008D46F4 /* Project object */;
+}

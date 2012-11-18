@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C97BF8A1631BC1A00BFE895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97BF891631BC1A00BFE895 /* Foundation.framework */; };
+		3C97BFA41631BC7A00BFE895 /* hb-blob.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF9D1631BC7A00BFE895 /* hb-blob.c */; };
+		3C97BFA51631BC7A00BFE895 /* hb-buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF9E1631BC7A00BFE895 /* hb-buffer.c */; };
+		3C97BFA61631BC7A00BFE895 /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF9F1631BC7A00BFE895 /* hb-font.cc */; };
+		3C97BFA71631BC7A00BFE895 /* hb-glib.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFA01631BC7A00BFE895 /* hb-glib.c */; };
+		3C97BFA81631BC7A00BFE895 /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFA11631BC7A00BFE895 /* hb-ot-layout.cc */; };
+		3C97BFA91631BC7A00BFE895 /* hb-shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFA21631BC7A00BFE895 /* hb-shape.c */; };
+		3C97BFAA1631BC7A00BFE895 /* hb-unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFA31631BC7A00BFE895 /* hb-unicode.c */; };
+		3C97BFAE1631BCCA00BFE895 /* fribidi_char_type.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFAB1631BCCA00BFE895 /* fribidi_char_type.c */; };
+		3C97BFAF1631BCCA00BFE895 /* fribidi_types.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFAC1631BCCA00BFE895 /* fribidi_types.c */; };
+		3C97BFB01631BCCA00BFE895 /* fribidi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFAD1631BCCA00BFE895 /* fribidi.c */; };
+		3C97BFDE1631BD3400BFE895 /* break.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB11631BD3400BFE895 /* break.c */; };
+		3C97BFDF1631BD3400BFE895 /* ellipsize.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB21631BD3400BFE895 /* ellipsize.c */; };
+		3C97BFE01631BD3400BFE895 /* fonts.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB31631BD3400BFE895 /* fonts.c */; };
+		3C97BFE11631BD3400BFE895 /* glyphstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB41631BD3400BFE895 /* glyphstring.c */; };
+		3C97BFE21631BD3400BFE895 /* module-defs-fc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB51631BD3400BFE895 /* module-defs-fc.c */; };
+		3C97BFE31631BD3400BFE895 /* module-defs-lang.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB61631BD3400BFE895 /* module-defs-lang.c */; };
+		3C97BFE41631BD3400BFE895 /* modules.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB71631BD3400BFE895 /* modules.c */; };
+		3C97BFE51631BD3400BFE895 /* pango-attributes.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB81631BD3400BFE895 /* pango-attributes.c */; };
+		3C97BFE61631BD3400BFE895 /* pango-bidi-type.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFB91631BD3400BFE895 /* pango-bidi-type.c */; };
+		3C97BFE71631BD3400BFE895 /* pango-color.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBA1631BD3400BFE895 /* pango-color.c */; };
+		3C97BFE81631BD3400BFE895 /* pango-context.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBB1631BD3400BFE895 /* pango-context.c */; };
+		3C97BFE91631BD3400BFE895 /* pango-coverage.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBC1631BD3400BFE895 /* pango-coverage.c */; };
+		3C97BFEA1631BD3400BFE895 /* pango-engine.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBD1631BD3400BFE895 /* pango-engine.c */; };
+		3C97BFEB1631BD3400BFE895 /* pango-enum-types.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBE1631BD3400BFE895 /* pango-enum-types.c */; };
+		3C97BFEC1631BD3400BFE895 /* pango-fontmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFBF1631BD3400BFE895 /* pango-fontmap.c */; };
+		3C97BFED1631BD3400BFE895 /* pango-fontset.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC01631BD3400BFE895 /* pango-fontset.c */; };
+		3C97BFEE1631BD3400BFE895 /* pango-glyph-item.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC11631BD3400BFE895 /* pango-glyph-item.c */; };
+		3C97BFEF1631BD3400BFE895 /* pango-gravity.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC21631BD3400BFE895 /* pango-gravity.c */; };
+		3C97BFF01631BD3400BFE895 /* pango-item.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC31631BD3400BFE895 /* pango-item.c */; };
+		3C97BFF11631BD3400BFE895 /* pango-language.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC41631BD3400BFE895 /* pango-language.c */; };
+		3C97BFF21631BD3400BFE895 /* pango-layout.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC51631BD3400BFE895 /* pango-layout.c */; };
+		3C97BFF31631BD3400BFE895 /* pango-markup.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC61631BD3400BFE895 /* pango-markup.c */; };
+		3C97BFF41631BD3400BFE895 /* pango-matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC71631BD3400BFE895 /* pango-matrix.c */; };
+		3C97BFF51631BD3400BFE895 /* pango-ot-buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC81631BD3400BFE895 /* pango-ot-buffer.c */; };
+		3C97BFF61631BD3400BFE895 /* pango-ot-info.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFC91631BD3400BFE895 /* pango-ot-info.c */; };
+		3C97BFF71631BD3400BFE895 /* pango-ot-ruleset.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCA1631BD3400BFE895 /* pango-ot-ruleset.c */; };
+		3C97BFF81631BD3400BFE895 /* pango-ot-tag.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCB1631BD3400BFE895 /* pango-ot-tag.c */; };
+		3C97BFF91631BD3400BFE895 /* pango-renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCC1631BD3400BFE895 /* pango-renderer.c */; };
+		3C97BFFA1631BD3400BFE895 /* pango-script.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCD1631BD3400BFE895 /* pango-script.c */; };
+		3C97BFFB1631BD3400BFE895 /* pango-tabs.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCE1631BD3400BFE895 /* pango-tabs.c */; };
+		3C97BFFC1631BD3400BFE895 /* pango-utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFCF1631BD3400BFE895 /* pango-utils.c */; };
+		3C97BFFD1631BD3400BFE895 /* pangocairo-context.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD01631BD3400BFE895 /* pangocairo-context.c */; };
+		3C97BFFE1631BD3400BFE895 /* pangocairo-fcfont.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD11631BD3400BFE895 /* pangocairo-fcfont.c */; };
+		3C97BFFF1631BD3400BFE895 /* pangocairo-fcfontmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD21631BD3400BFE895 /* pangocairo-fcfontmap.c */; };
+		3C97C0001631BD3400BFE895 /* pangocairo-font.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD31631BD3400BFE895 /* pangocairo-font.c */; };
+		3C97C0011631BD3400BFE895 /* pangocairo-fontmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD41631BD3400BFE895 /* pangocairo-fontmap.c */; };
+		3C97C0021631BD3400BFE895 /* pangocairo-render.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD51631BD3400BFE895 /* pangocairo-render.c */; };
+		3C97C0031631BD3400BFE895 /* pangofc-decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD61631BD3400BFE895 /* pangofc-decoder.c */; };
+		3C97C0041631BD3400BFE895 /* pangofc-font.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD71631BD3400BFE895 /* pangofc-font.c */; };
+		3C97C0051631BD3400BFE895 /* pangofc-fontmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD81631BD3400BFE895 /* pangofc-fontmap.c */; };
+		3C97C0061631BD3400BFE895 /* pangoft2-fontmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFD91631BD3400BFE895 /* pangoft2-fontmap.c */; };
+		3C97C0071631BD3400BFE895 /* pangoft2-render.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFDA1631BD3400BFE895 /* pangoft2-render.c */; };
+		3C97C0081631BD3400BFE895 /* pangoft2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFDB1631BD3400BFE895 /* pangoft2.c */; };
+		3C97C0091631BD3400BFE895 /* reorder-items.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFDC1631BD3400BFE895 /* reorder-items.c */; };
+		3C97C00A1631BD3400BFE895 /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BFDD1631BD3400BFE895 /* shape.c */; };
+		3C97C0111631C24E00BFE895 /* basic-fc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0101631C24E00BFE895 /* basic-fc.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C97BF841631BC1A00BFE895 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C97BF861631BC1A00BFE895 /* libpango.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpango.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C97BF891631BC1A00BFE895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3C97BF8D1631BC1A00BFE895 /* pango-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pango-Prefix.pch"; sourceTree = "<group>"; };
+		3C97BF9D1631BC7A00BFE895 /* hb-blob.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hb-blob.c"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-blob.c"; sourceTree = "<group>"; };
+		3C97BF9E1631BC7A00BFE895 /* hb-buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hb-buffer.c"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-buffer.c"; sourceTree = "<group>"; };
+		3C97BF9F1631BC7A00BFE895 /* hb-font.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-font.cc"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-font.cc"; sourceTree = "<group>"; };
+		3C97BFA01631BC7A00BFE895 /* hb-glib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hb-glib.c"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-glib.c"; sourceTree = "<group>"; };
+		3C97BFA11631BC7A00BFE895 /* hb-ot-layout.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-layout.cc"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-ot-layout.cc"; sourceTree = "<group>"; };
+		3C97BFA21631BC7A00BFE895 /* hb-shape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hb-shape.c"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-shape.c"; sourceTree = "<group>"; };
+		3C97BFA31631BC7A00BFE895 /* hb-unicode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hb-unicode.c"; path = "../../../../lib/pango-1.28.3/pango/opentype/hb-unicode.c"; sourceTree = "<group>"; };
+		3C97BFAB1631BCCA00BFE895 /* fribidi_char_type.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fribidi_char_type.c; path = "../../../../lib/pango-1.28.3/pango/mini-fribidi/fribidi_char_type.c"; sourceTree = "<group>"; };
+		3C97BFAC1631BCCA00BFE895 /* fribidi_types.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fribidi_types.c; path = "../../../../lib/pango-1.28.3/pango/mini-fribidi/fribidi_types.c"; sourceTree = "<group>"; };
+		3C97BFAD1631BCCA00BFE895 /* fribidi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fribidi.c; path = "../../../../lib/pango-1.28.3/pango/mini-fribidi/fribidi.c"; sourceTree = "<group>"; };
+		3C97BFB11631BD3400BFE895 /* break.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = break.c; path = "../../../../lib/pango-1.28.3/pango/break.c"; sourceTree = "<group>"; };
+		3C97BFB21631BD3400BFE895 /* ellipsize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ellipsize.c; path = "../../../../lib/pango-1.28.3/pango/ellipsize.c"; sourceTree = "<group>"; };
+		3C97BFB31631BD3400BFE895 /* fonts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fonts.c; path = "../../../../lib/pango-1.28.3/pango/fonts.c"; sourceTree = "<group>"; };
+		3C97BFB41631BD3400BFE895 /* glyphstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glyphstring.c; path = "../../../../lib/pango-1.28.3/pango/glyphstring.c"; sourceTree = "<group>"; };
+		3C97BFB51631BD3400BFE895 /* module-defs-fc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "module-defs-fc.c"; path = "../../../../lib/pango-1.28.3/pango/module-defs-fc.c"; sourceTree = "<group>"; };
+		3C97BFB61631BD3400BFE895 /* module-defs-lang.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "module-defs-lang.c"; path = "../../../../lib/pango-1.28.3/pango/module-defs-lang.c"; sourceTree = "<group>"; };
+		3C97BFB71631BD3400BFE895 /* modules.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = modules.c; path = "../../../../lib/pango-1.28.3/pango/modules.c"; sourceTree = "<group>"; };
+		3C97BFB81631BD3400BFE895 /* pango-attributes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-attributes.c"; path = "../../../../lib/pango-1.28.3/pango/pango-attributes.c"; sourceTree = "<group>"; };
+		3C97BFB91631BD3400BFE895 /* pango-bidi-type.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-bidi-type.c"; path = "../../../../lib/pango-1.28.3/pango/pango-bidi-type.c"; sourceTree = "<group>"; };
+		3C97BFBA1631BD3400BFE895 /* pango-color.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-color.c"; path = "../../../../lib/pango-1.28.3/pango/pango-color.c"; sourceTree = "<group>"; };
+		3C97BFBB1631BD3400BFE895 /* pango-context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-context.c"; path = "../../../../lib/pango-1.28.3/pango/pango-context.c"; sourceTree = "<group>"; };
+		3C97BFBC1631BD3400BFE895 /* pango-coverage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-coverage.c"; path = "../../../../lib/pango-1.28.3/pango/pango-coverage.c"; sourceTree = "<group>"; };
+		3C97BFBD1631BD3400BFE895 /* pango-engine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-engine.c"; path = "../../../../lib/pango-1.28.3/pango/pango-engine.c"; sourceTree = "<group>"; };
+		3C97BFBE1631BD3400BFE895 /* pango-enum-types.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-enum-types.c"; path = "../../../../lib/pango-1.28.3/pango/pango-enum-types.c"; sourceTree = "<group>"; };
+		3C97BFBF1631BD3400BFE895 /* pango-fontmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-fontmap.c"; path = "../../../../lib/pango-1.28.3/pango/pango-fontmap.c"; sourceTree = "<group>"; };
+		3C97BFC01631BD3400BFE895 /* pango-fontset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-fontset.c"; path = "../../../../lib/pango-1.28.3/pango/pango-fontset.c"; sourceTree = "<group>"; };
+		3C97BFC11631BD3400BFE895 /* pango-glyph-item.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-glyph-item.c"; path = "../../../../lib/pango-1.28.3/pango/pango-glyph-item.c"; sourceTree = "<group>"; };
+		3C97BFC21631BD3400BFE895 /* pango-gravity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-gravity.c"; path = "../../../../lib/pango-1.28.3/pango/pango-gravity.c"; sourceTree = "<group>"; };
+		3C97BFC31631BD3400BFE895 /* pango-item.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-item.c"; path = "../../../../lib/pango-1.28.3/pango/pango-item.c"; sourceTree = "<group>"; };
+		3C97BFC41631BD3400BFE895 /* pango-language.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-language.c"; path = "../../../../lib/pango-1.28.3/pango/pango-language.c"; sourceTree = "<group>"; };
+		3C97BFC51631BD3400BFE895 /* pango-layout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-layout.c"; path = "../../../../lib/pango-1.28.3/pango/pango-layout.c"; sourceTree = "<group>"; };
+		3C97BFC61631BD3400BFE895 /* pango-markup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-markup.c"; path = "../../../../lib/pango-1.28.3/pango/pango-markup.c"; sourceTree = "<group>"; };
+		3C97BFC71631BD3400BFE895 /* pango-matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-matrix.c"; path = "../../../../lib/pango-1.28.3/pango/pango-matrix.c"; sourceTree = "<group>"; };
+		3C97BFC81631BD3400BFE895 /* pango-ot-buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-ot-buffer.c"; path = "../../../../lib/pango-1.28.3/pango/pango-ot-buffer.c"; sourceTree = "<group>"; };
+		3C97BFC91631BD3400BFE895 /* pango-ot-info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-ot-info.c"; path = "../../../../lib/pango-1.28.3/pango/pango-ot-info.c"; sourceTree = "<group>"; };
+		3C97BFCA1631BD3400BFE895 /* pango-ot-ruleset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-ot-ruleset.c"; path = "../../../../lib/pango-1.28.3/pango/pango-ot-ruleset.c"; sourceTree = "<group>"; };
+		3C97BFCB1631BD3400BFE895 /* pango-ot-tag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-ot-tag.c"; path = "../../../../lib/pango-1.28.3/pango/pango-ot-tag.c"; sourceTree = "<group>"; };
+		3C97BFCC1631BD3400BFE895 /* pango-renderer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-renderer.c"; path = "../../../../lib/pango-1.28.3/pango/pango-renderer.c"; sourceTree = "<group>"; };
+		3C97BFCD1631BD3400BFE895 /* pango-script.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-script.c"; path = "../../../../lib/pango-1.28.3/pango/pango-script.c"; sourceTree = "<group>"; };
+		3C97BFCE1631BD3400BFE895 /* pango-tabs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-tabs.c"; path = "../../../../lib/pango-1.28.3/pango/pango-tabs.c"; sourceTree = "<group>"; };
+		3C97BFCF1631BD3400BFE895 /* pango-utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pango-utils.c"; path = "../../../../lib/pango-1.28.3/pango/pango-utils.c"; sourceTree = "<group>"; };
+		3C97BFD01631BD3400BFE895 /* pangocairo-context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-context.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-context.c"; sourceTree = "<group>"; };
+		3C97BFD11631BD3400BFE895 /* pangocairo-fcfont.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-fcfont.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-fcfont.c"; sourceTree = "<group>"; };
+		3C97BFD21631BD3400BFE895 /* pangocairo-fcfontmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-fcfontmap.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-fcfontmap.c"; sourceTree = "<group>"; };
+		3C97BFD31631BD3400BFE895 /* pangocairo-font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-font.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-font.c"; sourceTree = "<group>"; };
+		3C97BFD41631BD3400BFE895 /* pangocairo-fontmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-fontmap.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-fontmap.c"; sourceTree = "<group>"; };
+		3C97BFD51631BD3400BFE895 /* pangocairo-render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangocairo-render.c"; path = "../../../../lib/pango-1.28.3/pango/pangocairo-render.c"; sourceTree = "<group>"; };
+		3C97BFD61631BD3400BFE895 /* pangofc-decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangofc-decoder.c"; path = "../../../../lib/pango-1.28.3/pango/pangofc-decoder.c"; sourceTree = "<group>"; };
+		3C97BFD71631BD3400BFE895 /* pangofc-font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangofc-font.c"; path = "../../../../lib/pango-1.28.3/pango/pangofc-font.c"; sourceTree = "<group>"; };
+		3C97BFD81631BD3400BFE895 /* pangofc-fontmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangofc-fontmap.c"; path = "../../../../lib/pango-1.28.3/pango/pangofc-fontmap.c"; sourceTree = "<group>"; };
+		3C97BFD91631BD3400BFE895 /* pangoft2-fontmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangoft2-fontmap.c"; path = "../../../../lib/pango-1.28.3/pango/pangoft2-fontmap.c"; sourceTree = "<group>"; };
+		3C97BFDA1631BD3400BFE895 /* pangoft2-render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pangoft2-render.c"; path = "../../../../lib/pango-1.28.3/pango/pangoft2-render.c"; sourceTree = "<group>"; };
+		3C97BFDB1631BD3400BFE895 /* pangoft2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pangoft2.c; path = "../../../../lib/pango-1.28.3/pango/pangoft2.c"; sourceTree = "<group>"; };
+		3C97BFDC1631BD3400BFE895 /* reorder-items.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "reorder-items.c"; path = "../../../../lib/pango-1.28.3/pango/reorder-items.c"; sourceTree = "<group>"; };
+		3C97BFDD1631BD3400BFE895 /* shape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = shape.c; path = "../../../../lib/pango-1.28.3/pango/shape.c"; sourceTree = "<group>"; };
+		3C97C0101631C24E00BFE895 /* basic-fc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "basic-fc.c"; path = "../../../../lib/pango-1.28.3/modules/basic/basic-fc.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C97BF831631BC1A00BFE895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97BF8A1631BC1A00BFE895 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C97BF7B1631BC1A00BFE895 = {
+			isa = PBXGroup;
+			children = (
+				3C97BF8B1631BC1A00BFE895 /* pango */,
+				3C97BF881631BC1A00BFE895 /* Frameworks */,
+				3C97BF871631BC1A00BFE895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C97BF871631BC1A00BFE895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF861631BC1A00BFE895 /* libpango.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C97BF881631BC1A00BFE895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF891631BC1A00BFE895 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C97BF8B1631BC1A00BFE895 /* pango */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BFB11631BD3400BFE895 /* break.c */,
+				3C97BFB21631BD3400BFE895 /* ellipsize.c */,
+				3C97BFB31631BD3400BFE895 /* fonts.c */,
+				3C97BFB41631BD3400BFE895 /* glyphstring.c */,
+				3C97BFB51631BD3400BFE895 /* module-defs-fc.c */,
+				3C97BFB61631BD3400BFE895 /* module-defs-lang.c */,
+				3C97BFB71631BD3400BFE895 /* modules.c */,
+				3C97BFB81631BD3400BFE895 /* pango-attributes.c */,
+				3C97BFB91631BD3400BFE895 /* pango-bidi-type.c */,
+				3C97BFBA1631BD3400BFE895 /* pango-color.c */,
+				3C97BFBB1631BD3400BFE895 /* pango-context.c */,
+				3C97BFBC1631BD3400BFE895 /* pango-coverage.c */,
+				3C97BFBD1631BD3400BFE895 /* pango-engine.c */,
+				3C97BFBE1631BD3400BFE895 /* pango-enum-types.c */,
+				3C97BFBF1631BD3400BFE895 /* pango-fontmap.c */,
+				3C97BFC01631BD3400BFE895 /* pango-fontset.c */,
+				3C97BFC11631BD3400BFE895 /* pango-glyph-item.c */,
+				3C97BFC21631BD3400BFE895 /* pango-gravity.c */,
+				3C97BFC31631BD3400BFE895 /* pango-item.c */,
+				3C97BFC41631BD3400BFE895 /* pango-language.c */,
+				3C97BFC51631BD3400BFE895 /* pango-layout.c */,
+				3C97BFC61631BD3400BFE895 /* pango-markup.c */,
+				3C97BFC71631BD3400BFE895 /* pango-matrix.c */,
+				3C97C0101631C24E00BFE895 /* basic-fc.c */,
+				3C97BFC81631BD3400BFE895 /* pango-ot-buffer.c */,
+				3C97BFC91631BD3400BFE895 /* pango-ot-info.c */,
+				3C97BFCA1631BD3400BFE895 /* pango-ot-ruleset.c */,
+				3C97BFCB1631BD3400BFE895 /* pango-ot-tag.c */,
+				3C97BFCC1631BD3400BFE895 /* pango-renderer.c */,
+				3C97BFCD1631BD3400BFE895 /* pango-script.c */,
+				3C97BFCE1631BD3400BFE895 /* pango-tabs.c */,
+				3C97BFCF1631BD3400BFE895 /* pango-utils.c */,
+				3C97BFD01631BD3400BFE895 /* pangocairo-context.c */,
+				3C97BFD11631BD3400BFE895 /* pangocairo-fcfont.c */,
+				3C97BFD21631BD3400BFE895 /* pangocairo-fcfontmap.c */,
+				3C97BFD31631BD3400BFE895 /* pangocairo-font.c */,
+				3C97BFD41631BD3400BFE895 /* pangocairo-fontmap.c */,
+				3C97BFD51631BD3400BFE895 /* pangocairo-render.c */,
+				3C97BFD61631BD3400BFE895 /* pangofc-decoder.c */,
+				3C97BFD71631BD3400BFE895 /* pangofc-font.c */,
+				3C97BFD81631BD3400BFE895 /* pangofc-fontmap.c */,
+				3C97BFD91631BD3400BFE895 /* pangoft2-fontmap.c */,
+				3C97BFDA1631BD3400BFE895 /* pangoft2-render.c */,
+				3C97BFDB1631BD3400BFE895 /* pangoft2.c */,
+				3C97BFDC1631BD3400BFE895 /* reorder-items.c */,
+				3C97BFDD1631BD3400BFE895 /* shape.c */,
+				3C97BFAB1631BCCA00BFE895 /* fribidi_char_type.c */,
+				3C97BFAC1631BCCA00BFE895 /* fribidi_types.c */,
+				3C97BFAD1631BCCA00BFE895 /* fribidi.c */,
+				3C97BF9D1631BC7A00BFE895 /* hb-blob.c */,
+				3C97BF9E1631BC7A00BFE895 /* hb-buffer.c */,
+				3C97BF9F1631BC7A00BFE895 /* hb-font.cc */,
+				3C97BFA01631BC7A00BFE895 /* hb-glib.c */,
+				3C97BFA11631BC7A00BFE895 /* hb-ot-layout.cc */,
+				3C97BFA21631BC7A00BFE895 /* hb-shape.c */,
+				3C97BFA31631BC7A00BFE895 /* hb-unicode.c */,
+				3C97BF8C1631BC1A00BFE895 /* Supporting Files */,
+			);
+			path = pango;
+			sourceTree = "<group>";
+		};
+		3C97BF8C1631BC1A00BFE895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF8D1631BC1A00BFE895 /* pango-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C97BF851631BC1A00BFE895 /* pango */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C97BF941631BC1A00BFE895 /* Build configuration list for PBXNativeTarget "pango" */;
+			buildPhases = (
+				3C97BF821631BC1A00BFE895 /* Sources */,
+				3C97BF831631BC1A00BFE895 /* Frameworks */,
+				3C97BF841631BC1A00BFE895 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pango;
+			productName = pango;
+			productReference = 3C97BF861631BC1A00BFE895 /* libpango.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C97BF7D1631BC1A00BFE895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3C97BF801631BC1A00BFE895 /* Build configuration list for PBXProject "pango" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C97BF7B1631BC1A00BFE895;
+			productRefGroup = 3C97BF871631BC1A00BFE895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C97BF851631BC1A00BFE895 /* pango */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C97BF821631BC1A00BFE895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97BFA41631BC7A00BFE895 /* hb-blob.c in Sources */,
+				3C97BFA51631BC7A00BFE895 /* hb-buffer.c in Sources */,
+				3C97BFA61631BC7A00BFE895 /* hb-font.cc in Sources */,
+				3C97BFA71631BC7A00BFE895 /* hb-glib.c in Sources */,
+				3C97BFA81631BC7A00BFE895 /* hb-ot-layout.cc in Sources */,
+				3C97BFA91631BC7A00BFE895 /* hb-shape.c in Sources */,
+				3C97BFAA1631BC7A00BFE895 /* hb-unicode.c in Sources */,
+				3C97BFAE1631BCCA00BFE895 /* fribidi_char_type.c in Sources */,
+				3C97BFAF1631BCCA00BFE895 /* fribidi_types.c in Sources */,
+				3C97BFB01631BCCA00BFE895 /* fribidi.c in Sources */,
+				3C97BFDE1631BD3400BFE895 /* break.c in Sources */,
+				3C97BFDF1631BD3400BFE895 /* ellipsize.c in Sources */,
+				3C97BFE01631BD3400BFE895 /* fonts.c in Sources */,
+				3C97BFE11631BD3400BFE895 /* glyphstring.c in Sources */,
+				3C97BFE21631BD3400BFE895 /* module-defs-fc.c in Sources */,
+				3C97BFE31631BD3400BFE895 /* module-defs-lang.c in Sources */,
+				3C97BFE41631BD3400BFE895 /* modules.c in Sources */,
+				3C97BFE51631BD3400BFE895 /* pango-attributes.c in Sources */,
+				3C97BFE61631BD3400BFE895 /* pango-bidi-type.c in Sources */,
+				3C97BFE71631BD3400BFE895 /* pango-color.c in Sources */,
+				3C97BFE81631BD3400BFE895 /* pango-context.c in Sources */,
+				3C97BFE91631BD3400BFE895 /* pango-coverage.c in Sources */,
+				3C97BFEA1631BD3400BFE895 /* pango-engine.c in Sources */,
+				3C97BFEB1631BD3400BFE895 /* pango-enum-types.c in Sources */,
+				3C97BFEC1631BD3400BFE895 /* pango-fontmap.c in Sources */,
+				3C97BFED1631BD3400BFE895 /* pango-fontset.c in Sources */,
+				3C97BFEE1631BD3400BFE895 /* pango-glyph-item.c in Sources */,
+				3C97BFEF1631BD3400BFE895 /* pango-gravity.c in Sources */,
+				3C97BFF01631BD3400BFE895 /* pango-item.c in Sources */,
+				3C97BFF11631BD3400BFE895 /* pango-language.c in Sources */,
+				3C97BFF21631BD3400BFE895 /* pango-layout.c in Sources */,
+				3C97BFF31631BD3400BFE895 /* pango-markup.c in Sources */,
+				3C97BFF41631BD3400BFE895 /* pango-matrix.c in Sources */,
+				3C97BFF51631BD3400BFE895 /* pango-ot-buffer.c in Sources */,
+				3C97BFF61631BD3400BFE895 /* pango-ot-info.c in Sources */,
+				3C97BFF71631BD3400BFE895 /* pango-ot-ruleset.c in Sources */,
+				3C97BFF81631BD3400BFE895 /* pango-ot-tag.c in Sources */,
+				3C97BFF91631BD3400BFE895 /* pango-renderer.c in Sources */,
+				3C97BFFA1631BD3400BFE895 /* pango-script.c in Sources */,
+				3C97BFFB1631BD3400BFE895 /* pango-tabs.c in Sources */,
+				3C97BFFC1631BD3400BFE895 /* pango-utils.c in Sources */,
+				3C97BFFD1631BD3400BFE895 /* pangocairo-context.c in Sources */,
+				3C97BFFE1631BD3400BFE895 /* pangocairo-fcfont.c in Sources */,
+				3C97BFFF1631BD3400BFE895 /* pangocairo-fcfontmap.c in Sources */,
+				3C97C0001631BD3400BFE895 /* pangocairo-font.c in Sources */,
+				3C97C0011631BD3400BFE895 /* pangocairo-fontmap.c in Sources */,
+				3C97C0021631BD3400BFE895 /* pangocairo-render.c in Sources */,
+				3C97C0031631BD3400BFE895 /* pangofc-decoder.c in Sources */,
+				3C97C0041631BD3400BFE895 /* pangofc-font.c in Sources */,
+				3C97C0051631BD3400BFE895 /* pangofc-fontmap.c in Sources */,
+				3C97C0061631BD3400BFE895 /* pangoft2-fontmap.c in Sources */,
+				3C97C0071631BD3400BFE895 /* pangoft2-render.c in Sources */,
+				3C97C0081631BD3400BFE895 /* pangoft2.c in Sources */,
+				3C97C0091631BD3400BFE895 /* reorder-items.c in Sources */,
+				3C97C00A1631BD3400BFE895 /* shape.c in Sources */,
+				3C97C0111631C24E00BFE895 /* basic-fc.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C97BF921631BC1A00BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C97BF931631BC1A00BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C97BF951631BC1A00BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/pango.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pango/pango-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					G_DISABLE_CAST_CHECKS,
+					"LIBDIR=\\\".\\\"",
+					"SYSCONFDIR=\\\".\\\"",
+					PANGO_ENABLE_ENGINE,
+					PANGO_ENABLE_BACKEND,
+					"G_LOG_DOMAIN=\\\"Pango\\\"",
+					HAVE_GLIB,
+					HAVE_CONFIG_H,
+					"PANGO_MODULE_PREFIX=_pango_basic_fc",
+					G_DISABLE_CAST_CHECKS,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/include\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango/mini-fribidi\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango/opentype\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3\"",
+					"\"$(SRCROOT)/../../../lib/glib/glib\"",
+					"\"$(SRCROOT)/../../../lib/glib\"",
+					"\"$(SRCROOT)/../../../lib/glib/android\"",
+					"\"$(SRCROOT)/../../../lib/glib/gmodule\"",
+					"\"$(SRCROOT)/../../../lib/glib/gobject\"",
+					"\"$(SRCROOT)/../../../lib/freetype-2.4.3/include\"",
+					"\"$(SRCROOT)/../../../lib/fontconfig-2.8.0\"",
+					"\"$(SRCROOT)/../../../lib/cairo-1.10.0/src\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3C97BF961631BC1A00BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/pango.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pango/pango-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					G_DISABLE_CAST_CHECKS,
+					"LIBDIR=\\\".\\\"",
+					"SYSCONFDIR=\\\".\\\"",
+					PANGO_ENABLE_ENGINE,
+					PANGO_ENABLE_BACKEND,
+					"G_LOG_DOMAIN=\\\"Pango\\\"",
+					HAVE_GLIB,
+					HAVE_CONFIG_H,
+					"PANGO_MODULE_PREFIX=_pango_basic_fc",
+					G_DISABLE_CAST_CHECKS,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/include\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango/mini-fribidi\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3/pango/opentype\"",
+					"\"$(SRCROOT)/../../../lib/pango-1.28.3\"",
+					"\"$(SRCROOT)/../../../lib/glib/glib\"",
+					"\"$(SRCROOT)/../../../lib/glib\"",
+					"\"$(SRCROOT)/../../../lib/glib/android\"",
+					"\"$(SRCROOT)/../../../lib/glib/gmodule\"",
+					"\"$(SRCROOT)/../../../lib/glib/gobject\"",
+					"\"$(SRCROOT)/../../../lib/freetype-2.4.3/include\"",
+					"\"$(SRCROOT)/../../../lib/fontconfig-2.8.0\"",
+					"\"$(SRCROOT)/../../../lib/cairo-1.10.0/src\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C97BF801631BC1A00BFE895 /* Build configuration list for PBXProject "pango" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97BF921631BC1A00BFE895 /* Debug */,
+				3C97BF931631BC1A00BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C97BF941631BC1A00BFE895 /* Build configuration list for PBXNativeTarget "pango" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97BF951631BC1A00BFE895 /* Debug */,
+				3C97BF961631BC1A00BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C97BF7D1631BC1A00BFE895 /* Project object */;
+}

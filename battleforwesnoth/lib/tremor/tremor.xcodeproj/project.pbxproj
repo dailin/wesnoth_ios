@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CD06D0E1631B6780014DBBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD06D0D1631B6780014DBBB /* Foundation.framework */; };
+		3CD06D2D1631B6C30014DBBB /* block.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D211631B6C30014DBBB /* block.c */; };
+		3CD06D2E1631B6C30014DBBB /* codebook.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D221631B6C30014DBBB /* codebook.c */; };
+		3CD06D2F1631B6C30014DBBB /* floor0.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D231631B6C30014DBBB /* floor0.c */; };
+		3CD06D301631B6C30014DBBB /* floor1.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D241631B6C30014DBBB /* floor1.c */; };
+		3CD06D311631B6C30014DBBB /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D251631B6C30014DBBB /* info.c */; };
+		3CD06D321631B6C30014DBBB /* mapping0.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D261631B6C30014DBBB /* mapping0.c */; };
+		3CD06D331631B6C30014DBBB /* registry.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D271631B6C30014DBBB /* registry.c */; };
+		3CD06D341631B6C30014DBBB /* res012.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D281631B6C30014DBBB /* res012.c */; };
+		3CD06D351631B6C30014DBBB /* sharedbook.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D291631B6C30014DBBB /* sharedbook.c */; };
+		3CD06D361631B6C30014DBBB /* synthesis.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D2A1631B6C30014DBBB /* synthesis.c */; };
+		3CD06D371631B6C30014DBBB /* vorbisfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D2B1631B6C30014DBBB /* vorbisfile.c */; };
+		3CD06D381631B6C30014DBBB /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D2C1631B6C30014DBBB /* window.c */; };
+		3CD06D3A1631B6CF0014DBBB /* mdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CD06D391631B6CF0014DBBB /* mdct.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3CD06D081631B6780014DBBB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3CD06D0A1631B6780014DBBB /* libtremor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtremor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD06D0D1631B6780014DBBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3CD06D111631B6780014DBBB /* tremor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tremor-Prefix.pch"; sourceTree = "<group>"; };
+		3CD06D211631B6C30014DBBB /* block.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = block.c; path = ../../../../lib/tremor/block.c; sourceTree = "<group>"; };
+		3CD06D221631B6C30014DBBB /* codebook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = codebook.c; path = ../../../../lib/tremor/codebook.c; sourceTree = "<group>"; };
+		3CD06D231631B6C30014DBBB /* floor0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = floor0.c; path = ../../../../lib/tremor/floor0.c; sourceTree = "<group>"; };
+		3CD06D241631B6C30014DBBB /* floor1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = floor1.c; path = ../../../../lib/tremor/floor1.c; sourceTree = "<group>"; };
+		3CD06D251631B6C30014DBBB /* info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = info.c; path = ../../../../lib/tremor/info.c; sourceTree = "<group>"; };
+		3CD06D261631B6C30014DBBB /* mapping0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mapping0.c; path = ../../../../lib/tremor/mapping0.c; sourceTree = "<group>"; };
+		3CD06D271631B6C30014DBBB /* registry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = registry.c; path = ../../../../lib/tremor/registry.c; sourceTree = "<group>"; };
+		3CD06D281631B6C30014DBBB /* res012.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = res012.c; path = ../../../../lib/tremor/res012.c; sourceTree = "<group>"; };
+		3CD06D291631B6C30014DBBB /* sharedbook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sharedbook.c; path = ../../../../lib/tremor/sharedbook.c; sourceTree = "<group>"; };
+		3CD06D2A1631B6C30014DBBB /* synthesis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = synthesis.c; path = ../../../../lib/tremor/synthesis.c; sourceTree = "<group>"; };
+		3CD06D2B1631B6C30014DBBB /* vorbisfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vorbisfile.c; path = ../../../../lib/tremor/vorbisfile.c; sourceTree = "<group>"; };
+		3CD06D2C1631B6C30014DBBB /* window.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = window.c; path = ../../../../lib/tremor/window.c; sourceTree = "<group>"; };
+		3CD06D391631B6CF0014DBBB /* mdct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdct.c; path = ../../../../lib/tremor/mdct.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CD06D071631B6780014DBBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD06D0E1631B6780014DBBB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CD06CFF1631B6780014DBBB = {
+			isa = PBXGroup;
+			children = (
+				3CD06D0F1631B6780014DBBB /* tremor */,
+				3CD06D0C1631B6780014DBBB /* Frameworks */,
+				3CD06D0B1631B6780014DBBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3CD06D0B1631B6780014DBBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CD06D0A1631B6780014DBBB /* libtremor.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CD06D0C1631B6780014DBBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CD06D0D1631B6780014DBBB /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CD06D0F1631B6780014DBBB /* tremor */ = {
+			isa = PBXGroup;
+			children = (
+				3CD06D391631B6CF0014DBBB /* mdct.c */,
+				3CD06D211631B6C30014DBBB /* block.c */,
+				3CD06D221631B6C30014DBBB /* codebook.c */,
+				3CD06D231631B6C30014DBBB /* floor0.c */,
+				3CD06D241631B6C30014DBBB /* floor1.c */,
+				3CD06D251631B6C30014DBBB /* info.c */,
+				3CD06D261631B6C30014DBBB /* mapping0.c */,
+				3CD06D271631B6C30014DBBB /* registry.c */,
+				3CD06D281631B6C30014DBBB /* res012.c */,
+				3CD06D291631B6C30014DBBB /* sharedbook.c */,
+				3CD06D2A1631B6C30014DBBB /* synthesis.c */,
+				3CD06D2B1631B6C30014DBBB /* vorbisfile.c */,
+				3CD06D2C1631B6C30014DBBB /* window.c */,
+				3CD06D101631B6780014DBBB /* Supporting Files */,
+			);
+			path = tremor;
+			sourceTree = "<group>";
+		};
+		3CD06D101631B6780014DBBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CD06D111631B6780014DBBB /* tremor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CD06D091631B6780014DBBB /* tremor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CD06D181631B6780014DBBB /* Build configuration list for PBXNativeTarget "tremor" */;
+			buildPhases = (
+				3CD06D061631B6780014DBBB /* Sources */,
+				3CD06D071631B6780014DBBB /* Frameworks */,
+				3CD06D081631B6780014DBBB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tremor;
+			productName = tremor;
+			productReference = 3CD06D0A1631B6780014DBBB /* libtremor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3CD06D011631B6780014DBBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3CD06D041631B6780014DBBB /* Build configuration list for PBXProject "tremor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3CD06CFF1631B6780014DBBB;
+			productRefGroup = 3CD06D0B1631B6780014DBBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CD06D091631B6780014DBBB /* tremor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CD06D061631B6780014DBBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD06D2D1631B6C30014DBBB /* block.c in Sources */,
+				3CD06D2E1631B6C30014DBBB /* codebook.c in Sources */,
+				3CD06D2F1631B6C30014DBBB /* floor0.c in Sources */,
+				3CD06D301631B6C30014DBBB /* floor1.c in Sources */,
+				3CD06D311631B6C30014DBBB /* info.c in Sources */,
+				3CD06D321631B6C30014DBBB /* mapping0.c in Sources */,
+				3CD06D331631B6C30014DBBB /* registry.c in Sources */,
+				3CD06D341631B6C30014DBBB /* res012.c in Sources */,
+				3CD06D351631B6C30014DBBB /* sharedbook.c in Sources */,
+				3CD06D361631B6C30014DBBB /* synthesis.c in Sources */,
+				3CD06D371631B6C30014DBBB /* vorbisfile.c in Sources */,
+				3CD06D381631B6C30014DBBB /* window.c in Sources */,
+				3CD06D3A1631B6CF0014DBBB /* mdct.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3CD06D161631B6780014DBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3CD06D171631B6780014DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CD06D191631B6780014DBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/tremor.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tremor/tremor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_ALLOCA_H;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/tremor/include\"",
+					"\"$(SRCROOT)/../../../lib/tremor\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.2.2/include\"",
+					"\"$(SRCROOT)/../../../lib/tremor/include/tremor\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3CD06D1A1631B6780014DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/tremor.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tremor/tremor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_ALLOCA_H;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/tremor/include\"",
+					"\"$(SRCROOT)/../../../lib/tremor\"",
+					"\"$(SRCROOT)/../../../lib/libogg-1.2.2/include\"",
+					"\"$(SRCROOT)/../../../lib/tremor/include/tremor\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CD06D041631B6780014DBBB /* Build configuration list for PBXProject "tremor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD06D161631B6780014DBBB /* Debug */,
+				3CD06D171631B6780014DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CD06D181631B6780014DBBB /* Build configuration list for PBXNativeTarget "tremor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD06D191631B6780014DBBB /* Debug */,
+				3CD06D1A1631B6780014DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CD06D011631B6780014DBBB /* Project object */;
+}

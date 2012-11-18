@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C97BF131631BB0700BFE895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97BF121631BB0700BFE895 /* Foundation.framework */; };
+		3C97BF341631BB4A00BFE895 /* mdreg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF261631BB4A00BFE895 /* mdreg.c */; };
+		3C97BF351631BB4A00BFE895 /* mdriver.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF271631BB4A00BFE895 /* mdriver.c */; };
+		3C97BF361631BB4A00BFE895 /* mdulaw.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF281631BB4A00BFE895 /* mdulaw.c */; };
+		3C97BF371631BB4A00BFE895 /* mloader.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF291631BB4A00BFE895 /* mloader.c */; };
+		3C97BF381631BB4A00BFE895 /* mlreg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2A1631BB4A00BFE895 /* mlreg.c */; };
+		3C97BF391631BB4A00BFE895 /* mlutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2B1631BB4A00BFE895 /* mlutil.c */; };
+		3C97BF3A1631BB4A00BFE895 /* mplayer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2C1631BB4A00BFE895 /* mplayer.c */; };
+		3C97BF3B1631BB4A00BFE895 /* munitrk.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2D1631BB4A00BFE895 /* munitrk.c */; };
+		3C97BF3C1631BB4A00BFE895 /* mwav.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2E1631BB4A00BFE895 /* mwav.c */; };
+		3C97BF3D1631BB4A00BFE895 /* npertab.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF2F1631BB4A00BFE895 /* npertab.c */; };
+		3C97BF3E1631BB4A00BFE895 /* sloader.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF301631BB4A00BFE895 /* sloader.c */; };
+		3C97BF3F1631BB4A00BFE895 /* virtch_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF311631BB4A00BFE895 /* virtch_common.c */; };
+		3C97BF401631BB4A00BFE895 /* virtch.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF321631BB4A00BFE895 /* virtch.c */; };
+		3C97BF411631BB4A00BFE895 /* virtch2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF331631BB4A00BFE895 /* virtch2.c */; };
+		3C97BF451631BB5400BFE895 /* mmalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF421631BB5400BFE895 /* mmalloc.c */; };
+		3C97BF461631BB5400BFE895 /* mmerror.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF431631BB5400BFE895 /* mmerror.c */; };
+		3C97BF471631BB5400BFE895 /* mmio.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF441631BB5400BFE895 /* mmio.c */; };
+		3C97BF5B1631BB6A00BFE895 /* load_669.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF481631BB6A00BFE895 /* load_669.c */; };
+		3C97BF5C1631BB6A00BFE895 /* load_amf.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF491631BB6A00BFE895 /* load_amf.c */; };
+		3C97BF5D1631BB6A00BFE895 /* load_asy.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4A1631BB6A00BFE895 /* load_asy.c */; };
+		3C97BF5E1631BB6A00BFE895 /* load_dsm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4B1631BB6A00BFE895 /* load_dsm.c */; };
+		3C97BF5F1631BB6A00BFE895 /* load_far.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4C1631BB6A00BFE895 /* load_far.c */; };
+		3C97BF601631BB6A00BFE895 /* load_gdm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4D1631BB6A00BFE895 /* load_gdm.c */; };
+		3C97BF611631BB6A00BFE895 /* load_imf.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4E1631BB6A00BFE895 /* load_imf.c */; };
+		3C97BF621631BB6A00BFE895 /* load_it.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF4F1631BB6A00BFE895 /* load_it.c */; };
+		3C97BF631631BB6A00BFE895 /* load_m15.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF501631BB6A00BFE895 /* load_m15.c */; };
+		3C97BF641631BB6A00BFE895 /* load_med.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF511631BB6A00BFE895 /* load_med.c */; };
+		3C97BF651631BB6A00BFE895 /* load_mod.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF521631BB6A00BFE895 /* load_mod.c */; };
+		3C97BF661631BB6A00BFE895 /* load_mtm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF531631BB6A00BFE895 /* load_mtm.c */; };
+		3C97BF671631BB6A00BFE895 /* load_okt.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF541631BB6A00BFE895 /* load_okt.c */; };
+		3C97BF681631BB6A00BFE895 /* load_s3m.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF551631BB6A00BFE895 /* load_s3m.c */; };
+		3C97BF691631BB6A00BFE895 /* load_stm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF561631BB6A00BFE895 /* load_stm.c */; };
+		3C97BF6A1631BB6A00BFE895 /* load_stx.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF571631BB6A00BFE895 /* load_stx.c */; };
+		3C97BF6B1631BB6A00BFE895 /* load_ult.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF581631BB6A00BFE895 /* load_ult.c */; };
+		3C97BF6C1631BB6A00BFE895 /* load_uni.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF591631BB6A00BFE895 /* load_uni.c */; };
+		3C97BF6D1631BB6A00BFE895 /* load_xm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF5A1631BB6A00BFE895 /* load_xm.c */; };
+		3C97BF731631BB7400BFE895 /* drv_aiff.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF6E1631BB7400BFE895 /* drv_aiff.c */; };
+		3C97BF741631BB7400BFE895 /* drv_nos.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF6F1631BB7400BFE895 /* drv_nos.c */; };
+		3C97BF751631BB7400BFE895 /* drv_pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF701631BB7400BFE895 /* drv_pipe.c */; };
+		3C97BF761631BB7400BFE895 /* drv_stdout.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF711631BB7400BFE895 /* drv_stdout.c */; };
+		3C97BF771631BB7400BFE895 /* drv_wav.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97BF721631BB7400BFE895 /* drv_wav.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C97BF0D1631BB0700BFE895 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C97BF0F1631BB0700BFE895 /* libmikmod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmikmod.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C97BF121631BB0700BFE895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3C97BF161631BB0700BFE895 /* mikmod-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mikmod-Prefix.pch"; sourceTree = "<group>"; };
+		3C97BF261631BB4A00BFE895 /* mdreg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdreg.c; path = ../../../../lib/mikmod/playercode/mdreg.c; sourceTree = "<group>"; };
+		3C97BF271631BB4A00BFE895 /* mdriver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdriver.c; path = ../../../../lib/mikmod/playercode/mdriver.c; sourceTree = "<group>"; };
+		3C97BF281631BB4A00BFE895 /* mdulaw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdulaw.c; path = ../../../../lib/mikmod/playercode/mdulaw.c; sourceTree = "<group>"; };
+		3C97BF291631BB4A00BFE895 /* mloader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mloader.c; path = ../../../../lib/mikmod/playercode/mloader.c; sourceTree = "<group>"; };
+		3C97BF2A1631BB4A00BFE895 /* mlreg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mlreg.c; path = ../../../../lib/mikmod/playercode/mlreg.c; sourceTree = "<group>"; };
+		3C97BF2B1631BB4A00BFE895 /* mlutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mlutil.c; path = ../../../../lib/mikmod/playercode/mlutil.c; sourceTree = "<group>"; };
+		3C97BF2C1631BB4A00BFE895 /* mplayer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mplayer.c; path = ../../../../lib/mikmod/playercode/mplayer.c; sourceTree = "<group>"; };
+		3C97BF2D1631BB4A00BFE895 /* munitrk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = munitrk.c; path = ../../../../lib/mikmod/playercode/munitrk.c; sourceTree = "<group>"; };
+		3C97BF2E1631BB4A00BFE895 /* mwav.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mwav.c; path = ../../../../lib/mikmod/playercode/mwav.c; sourceTree = "<group>"; };
+		3C97BF2F1631BB4A00BFE895 /* npertab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = npertab.c; path = ../../../../lib/mikmod/playercode/npertab.c; sourceTree = "<group>"; };
+		3C97BF301631BB4A00BFE895 /* sloader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sloader.c; path = ../../../../lib/mikmod/playercode/sloader.c; sourceTree = "<group>"; };
+		3C97BF311631BB4A00BFE895 /* virtch_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = virtch_common.c; path = ../../../../lib/mikmod/playercode/virtch_common.c; sourceTree = "<group>"; };
+		3C97BF321631BB4A00BFE895 /* virtch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = virtch.c; path = ../../../../lib/mikmod/playercode/virtch.c; sourceTree = "<group>"; };
+		3C97BF331631BB4A00BFE895 /* virtch2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = virtch2.c; path = ../../../../lib/mikmod/playercode/virtch2.c; sourceTree = "<group>"; };
+		3C97BF421631BB5400BFE895 /* mmalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmalloc.c; path = ../../../../lib/mikmod/mmio/mmalloc.c; sourceTree = "<group>"; };
+		3C97BF431631BB5400BFE895 /* mmerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmerror.c; path = ../../../../lib/mikmod/mmio/mmerror.c; sourceTree = "<group>"; };
+		3C97BF441631BB5400BFE895 /* mmio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmio.c; path = ../../../../lib/mikmod/mmio/mmio.c; sourceTree = "<group>"; };
+		3C97BF481631BB6A00BFE895 /* load_669.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_669.c; path = ../../../../lib/mikmod/loaders/load_669.c; sourceTree = "<group>"; };
+		3C97BF491631BB6A00BFE895 /* load_amf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_amf.c; path = ../../../../lib/mikmod/loaders/load_amf.c; sourceTree = "<group>"; };
+		3C97BF4A1631BB6A00BFE895 /* load_asy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_asy.c; path = ../../../../lib/mikmod/loaders/load_asy.c; sourceTree = "<group>"; };
+		3C97BF4B1631BB6A00BFE895 /* load_dsm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_dsm.c; path = ../../../../lib/mikmod/loaders/load_dsm.c; sourceTree = "<group>"; };
+		3C97BF4C1631BB6A00BFE895 /* load_far.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_far.c; path = ../../../../lib/mikmod/loaders/load_far.c; sourceTree = "<group>"; };
+		3C97BF4D1631BB6A00BFE895 /* load_gdm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_gdm.c; path = ../../../../lib/mikmod/loaders/load_gdm.c; sourceTree = "<group>"; };
+		3C97BF4E1631BB6A00BFE895 /* load_imf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_imf.c; path = ../../../../lib/mikmod/loaders/load_imf.c; sourceTree = "<group>"; };
+		3C97BF4F1631BB6A00BFE895 /* load_it.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_it.c; path = ../../../../lib/mikmod/loaders/load_it.c; sourceTree = "<group>"; };
+		3C97BF501631BB6A00BFE895 /* load_m15.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_m15.c; path = ../../../../lib/mikmod/loaders/load_m15.c; sourceTree = "<group>"; };
+		3C97BF511631BB6A00BFE895 /* load_med.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_med.c; path = ../../../../lib/mikmod/loaders/load_med.c; sourceTree = "<group>"; };
+		3C97BF521631BB6A00BFE895 /* load_mod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_mod.c; path = ../../../../lib/mikmod/loaders/load_mod.c; sourceTree = "<group>"; };
+		3C97BF531631BB6A00BFE895 /* load_mtm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_mtm.c; path = ../../../../lib/mikmod/loaders/load_mtm.c; sourceTree = "<group>"; };
+		3C97BF541631BB6A00BFE895 /* load_okt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_okt.c; path = ../../../../lib/mikmod/loaders/load_okt.c; sourceTree = "<group>"; };
+		3C97BF551631BB6A00BFE895 /* load_s3m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_s3m.c; path = ../../../../lib/mikmod/loaders/load_s3m.c; sourceTree = "<group>"; };
+		3C97BF561631BB6A00BFE895 /* load_stm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_stm.c; path = ../../../../lib/mikmod/loaders/load_stm.c; sourceTree = "<group>"; };
+		3C97BF571631BB6A00BFE895 /* load_stx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_stx.c; path = ../../../../lib/mikmod/loaders/load_stx.c; sourceTree = "<group>"; };
+		3C97BF581631BB6A00BFE895 /* load_ult.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_ult.c; path = ../../../../lib/mikmod/loaders/load_ult.c; sourceTree = "<group>"; };
+		3C97BF591631BB6A00BFE895 /* load_uni.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_uni.c; path = ../../../../lib/mikmod/loaders/load_uni.c; sourceTree = "<group>"; };
+		3C97BF5A1631BB6A00BFE895 /* load_xm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = load_xm.c; path = ../../../../lib/mikmod/loaders/load_xm.c; sourceTree = "<group>"; };
+		3C97BF6E1631BB7400BFE895 /* drv_aiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = drv_aiff.c; path = ../../../../lib/mikmod/drivers/drv_aiff.c; sourceTree = "<group>"; };
+		3C97BF6F1631BB7400BFE895 /* drv_nos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = drv_nos.c; path = ../../../../lib/mikmod/drivers/drv_nos.c; sourceTree = "<group>"; };
+		3C97BF701631BB7400BFE895 /* drv_pipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = drv_pipe.c; path = ../../../../lib/mikmod/drivers/drv_pipe.c; sourceTree = "<group>"; };
+		3C97BF711631BB7400BFE895 /* drv_stdout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = drv_stdout.c; path = ../../../../lib/mikmod/drivers/drv_stdout.c; sourceTree = "<group>"; };
+		3C97BF721631BB7400BFE895 /* drv_wav.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = drv_wav.c; path = ../../../../lib/mikmod/drivers/drv_wav.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C97BF0C1631BB0700BFE895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97BF131631BB0700BFE895 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C97BF041631BB0700BFE895 = {
+			isa = PBXGroup;
+			children = (
+				3C97BF141631BB0700BFE895 /* mikmod */,
+				3C97BF111631BB0700BFE895 /* Frameworks */,
+				3C97BF101631BB0700BFE895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C97BF101631BB0700BFE895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF0F1631BB0700BFE895 /* libmikmod.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C97BF111631BB0700BFE895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF121631BB0700BFE895 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C97BF141631BB0700BFE895 /* mikmod */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF6E1631BB7400BFE895 /* drv_aiff.c */,
+				3C97BF6F1631BB7400BFE895 /* drv_nos.c */,
+				3C97BF701631BB7400BFE895 /* drv_pipe.c */,
+				3C97BF711631BB7400BFE895 /* drv_stdout.c */,
+				3C97BF721631BB7400BFE895 /* drv_wav.c */,
+				3C97BF481631BB6A00BFE895 /* load_669.c */,
+				3C97BF491631BB6A00BFE895 /* load_amf.c */,
+				3C97BF4A1631BB6A00BFE895 /* load_asy.c */,
+				3C97BF4B1631BB6A00BFE895 /* load_dsm.c */,
+				3C97BF4C1631BB6A00BFE895 /* load_far.c */,
+				3C97BF4D1631BB6A00BFE895 /* load_gdm.c */,
+				3C97BF4E1631BB6A00BFE895 /* load_imf.c */,
+				3C97BF4F1631BB6A00BFE895 /* load_it.c */,
+				3C97BF501631BB6A00BFE895 /* load_m15.c */,
+				3C97BF511631BB6A00BFE895 /* load_med.c */,
+				3C97BF521631BB6A00BFE895 /* load_mod.c */,
+				3C97BF531631BB6A00BFE895 /* load_mtm.c */,
+				3C97BF541631BB6A00BFE895 /* load_okt.c */,
+				3C97BF551631BB6A00BFE895 /* load_s3m.c */,
+				3C97BF561631BB6A00BFE895 /* load_stm.c */,
+				3C97BF571631BB6A00BFE895 /* load_stx.c */,
+				3C97BF581631BB6A00BFE895 /* load_ult.c */,
+				3C97BF591631BB6A00BFE895 /* load_uni.c */,
+				3C97BF5A1631BB6A00BFE895 /* load_xm.c */,
+				3C97BF421631BB5400BFE895 /* mmalloc.c */,
+				3C97BF431631BB5400BFE895 /* mmerror.c */,
+				3C97BF441631BB5400BFE895 /* mmio.c */,
+				3C97BF261631BB4A00BFE895 /* mdreg.c */,
+				3C97BF271631BB4A00BFE895 /* mdriver.c */,
+				3C97BF281631BB4A00BFE895 /* mdulaw.c */,
+				3C97BF291631BB4A00BFE895 /* mloader.c */,
+				3C97BF2A1631BB4A00BFE895 /* mlreg.c */,
+				3C97BF2B1631BB4A00BFE895 /* mlutil.c */,
+				3C97BF2C1631BB4A00BFE895 /* mplayer.c */,
+				3C97BF2D1631BB4A00BFE895 /* munitrk.c */,
+				3C97BF2E1631BB4A00BFE895 /* mwav.c */,
+				3C97BF2F1631BB4A00BFE895 /* npertab.c */,
+				3C97BF301631BB4A00BFE895 /* sloader.c */,
+				3C97BF311631BB4A00BFE895 /* virtch_common.c */,
+				3C97BF321631BB4A00BFE895 /* virtch.c */,
+				3C97BF331631BB4A00BFE895 /* virtch2.c */,
+				3C97BF151631BB0700BFE895 /* Supporting Files */,
+			);
+			path = mikmod;
+			sourceTree = "<group>";
+		};
+		3C97BF151631BB0700BFE895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C97BF161631BB0700BFE895 /* mikmod-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C97BF0E1631BB0700BFE895 /* mikmod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C97BF1D1631BB0700BFE895 /* Build configuration list for PBXNativeTarget "mikmod" */;
+			buildPhases = (
+				3C97BF0B1631BB0700BFE895 /* Sources */,
+				3C97BF0C1631BB0700BFE895 /* Frameworks */,
+				3C97BF0D1631BB0700BFE895 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mikmod;
+			productName = mikmod;
+			productReference = 3C97BF0F1631BB0700BFE895 /* libmikmod.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C97BF061631BB0700BFE895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3C97BF091631BB0700BFE895 /* Build configuration list for PBXProject "mikmod" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C97BF041631BB0700BFE895;
+			productRefGroup = 3C97BF101631BB0700BFE895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C97BF0E1631BB0700BFE895 /* mikmod */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C97BF0B1631BB0700BFE895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97BF341631BB4A00BFE895 /* mdreg.c in Sources */,
+				3C97BF351631BB4A00BFE895 /* mdriver.c in Sources */,
+				3C97BF361631BB4A00BFE895 /* mdulaw.c in Sources */,
+				3C97BF371631BB4A00BFE895 /* mloader.c in Sources */,
+				3C97BF381631BB4A00BFE895 /* mlreg.c in Sources */,
+				3C97BF391631BB4A00BFE895 /* mlutil.c in Sources */,
+				3C97BF3A1631BB4A00BFE895 /* mplayer.c in Sources */,
+				3C97BF3B1631BB4A00BFE895 /* munitrk.c in Sources */,
+				3C97BF3C1631BB4A00BFE895 /* mwav.c in Sources */,
+				3C97BF3D1631BB4A00BFE895 /* npertab.c in Sources */,
+				3C97BF3E1631BB4A00BFE895 /* sloader.c in Sources */,
+				3C97BF3F1631BB4A00BFE895 /* virtch_common.c in Sources */,
+				3C97BF401631BB4A00BFE895 /* virtch.c in Sources */,
+				3C97BF411631BB4A00BFE895 /* virtch2.c in Sources */,
+				3C97BF451631BB5400BFE895 /* mmalloc.c in Sources */,
+				3C97BF461631BB5400BFE895 /* mmerror.c in Sources */,
+				3C97BF471631BB5400BFE895 /* mmio.c in Sources */,
+				3C97BF5B1631BB6A00BFE895 /* load_669.c in Sources */,
+				3C97BF5C1631BB6A00BFE895 /* load_amf.c in Sources */,
+				3C97BF5D1631BB6A00BFE895 /* load_asy.c in Sources */,
+				3C97BF5E1631BB6A00BFE895 /* load_dsm.c in Sources */,
+				3C97BF5F1631BB6A00BFE895 /* load_far.c in Sources */,
+				3C97BF601631BB6A00BFE895 /* load_gdm.c in Sources */,
+				3C97BF611631BB6A00BFE895 /* load_imf.c in Sources */,
+				3C97BF621631BB6A00BFE895 /* load_it.c in Sources */,
+				3C97BF631631BB6A00BFE895 /* load_m15.c in Sources */,
+				3C97BF641631BB6A00BFE895 /* load_med.c in Sources */,
+				3C97BF651631BB6A00BFE895 /* load_mod.c in Sources */,
+				3C97BF661631BB6A00BFE895 /* load_mtm.c in Sources */,
+				3C97BF671631BB6A00BFE895 /* load_okt.c in Sources */,
+				3C97BF681631BB6A00BFE895 /* load_s3m.c in Sources */,
+				3C97BF691631BB6A00BFE895 /* load_stm.c in Sources */,
+				3C97BF6A1631BB6A00BFE895 /* load_stx.c in Sources */,
+				3C97BF6B1631BB6A00BFE895 /* load_ult.c in Sources */,
+				3C97BF6C1631BB6A00BFE895 /* load_uni.c in Sources */,
+				3C97BF6D1631BB6A00BFE895 /* load_xm.c in Sources */,
+				3C97BF731631BB7400BFE895 /* drv_aiff.c in Sources */,
+				3C97BF741631BB7400BFE895 /* drv_nos.c in Sources */,
+				3C97BF751631BB7400BFE895 /* drv_pipe.c in Sources */,
+				3C97BF761631BB7400BFE895 /* drv_stdout.c in Sources */,
+				3C97BF771631BB7400BFE895 /* drv_wav.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C97BF1B1631BB0700BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C97BF1C1631BB0700BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C97BF1E1631BB0700BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/mikmod.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mikmod/mikmod-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/mikmod/include\"",
+					"\"$(SRCROOT)/../../../lib/mikmod\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3C97BF1F1631BB0700BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/mikmod.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mikmod/mikmod-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/mikmod/include\"",
+					"\"$(SRCROOT)/../../../lib/mikmod\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C97BF091631BB0700BFE895 /* Build configuration list for PBXProject "mikmod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97BF1B1631BB0700BFE895 /* Debug */,
+				3C97BF1C1631BB0700BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C97BF1D1631BB0700BFE895 /* Build configuration list for PBXNativeTarget "mikmod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97BF1E1631BB0700BFE895 /* Debug */,
+				3C97BF1F1631BB0700BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C97BF061631BB0700BFE895 /* Project object */;
+}

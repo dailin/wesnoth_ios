@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C97C1CE1631CCB600BFE895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97C1CD1631CCB600BFE895 /* Foundation.framework */; };
+		3C97C1E21631CDC500BFE895 /* iconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C1E11631CDC500BFE895 /* iconv.c */; };
+		3C97C1E41631CDD500BFE895 /* relocatable.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C1E31631CDD500BFE895 /* relocatable.c */; };
+		3C97C1E61631CDEB00BFE895 /* localcharset.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C1E51631CDEB00BFE895 /* localcharset.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C97C1C81631CCB600BFE895 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C97C1CA1631CCB600BFE895 /* libiconv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiconv.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C97C1CD1631CCB600BFE895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3C97C1D11631CCB600BFE895 /* iconv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iconv-Prefix.pch"; sourceTree = "<group>"; };
+		3C97C1E11631CDC500BFE895 /* iconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = iconv.c; path = ../../../../lib/libiconv/lib/iconv.c; sourceTree = "<group>"; };
+		3C97C1E31631CDD500BFE895 /* relocatable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = relocatable.c; path = ../../../../lib/libiconv/lib/relocatable.c; sourceTree = "<group>"; };
+		3C97C1E51631CDEB00BFE895 /* localcharset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = localcharset.c; path = ../../../../lib/libiconv/libcharset/lib/localcharset.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C97C1C71631CCB600BFE895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97C1CE1631CCB600BFE895 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C97C1BF1631CCB600BFE895 = {
+			isa = PBXGroup;
+			children = (
+				3C97C1CF1631CCB600BFE895 /* iconv */,
+				3C97C1CC1631CCB600BFE895 /* Frameworks */,
+				3C97C1CB1631CCB600BFE895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C97C1CB1631CCB600BFE895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C1CA1631CCB600BFE895 /* libiconv.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C97C1CC1631CCB600BFE895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C1CD1631CCB600BFE895 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C97C1CF1631CCB600BFE895 /* iconv */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C1E51631CDEB00BFE895 /* localcharset.c */,
+				3C97C1E31631CDD500BFE895 /* relocatable.c */,
+				3C97C1E11631CDC500BFE895 /* iconv.c */,
+				3C97C1D01631CCB600BFE895 /* Supporting Files */,
+			);
+			path = iconv;
+			sourceTree = "<group>";
+		};
+		3C97C1D01631CCB600BFE895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C1D11631CCB600BFE895 /* iconv-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C97C1C91631CCB600BFE895 /* iconv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C97C1D81631CCB600BFE895 /* Build configuration list for PBXNativeTarget "iconv" */;
+			buildPhases = (
+				3C97C1C61631CCB600BFE895 /* Sources */,
+				3C97C1C71631CCB600BFE895 /* Frameworks */,
+				3C97C1C81631CCB600BFE895 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iconv;
+			productName = iconv;
+			productReference = 3C97C1CA1631CCB600BFE895 /* libiconv.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C97C1C11631CCB600BFE895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3C97C1C41631CCB600BFE895 /* Build configuration list for PBXProject "iconv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C97C1BF1631CCB600BFE895;
+			productRefGroup = 3C97C1CB1631CCB600BFE895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C97C1C91631CCB600BFE895 /* iconv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C97C1C61631CCB600BFE895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97C1E21631CDC500BFE895 /* iconv.c in Sources */,
+				3C97C1E41631CDD500BFE895 /* relocatable.c in Sources */,
+				3C97C1E61631CDEB00BFE895 /* localcharset.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C97C1D61631CCB600BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C97C1D71631CCB600BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C97C1D91631CCB600BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/iconv.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iconv/iconv-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					BUILDING_LIBICONV,
+					"LIBDIR=\\\"\\\"",
+					"LOCALEDIR=\\\"\\\"",
+					"INSTALLDIR=\\\"\\\"",
+					"EXEEXT=\\\"\\\"",
+					HAVE_CONFIG_H,
+					"ENABLE_RELOCATABLE=1",
+					BUILDING_DLL,
+					IN_LIBRARY,
+					"INSTALLDIR=\\\"\\\"",
+					NO_XMALLOC,
+					"set_relocation_prefix=libiconv_set_relocation_prefix",
+					"relocate=libiconv_relocate",
+					LIBICONV_PLUG,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/libiconv/lib\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/include\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/srclib\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/src\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3C97C1DA1631CCB600BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/iconv.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iconv/iconv-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					BUILDING_LIBICONV,
+					"LIBDIR=\\\"\\\"",
+					"LOCALEDIR=\\\"\\\"",
+					"INSTALLDIR=\\\"\\\"",
+					"EXEEXT=\\\"\\\"",
+					HAVE_CONFIG_H,
+					"ENABLE_RELOCATABLE=1",
+					BUILDING_DLL,
+					IN_LIBRARY,
+					"INSTALLDIR=\\\"\\\"",
+					NO_XMALLOC,
+					"set_relocation_prefix=libiconv_set_relocation_prefix",
+					"relocate=libiconv_relocate",
+					LIBICONV_PLUG,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/libiconv/lib\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/include\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/srclib\"",
+					"\"$(SRCROOT)/../../../lib/libiconv/src\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C97C1C41631CCB600BFE895 /* Build configuration list for PBXProject "iconv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97C1D61631CCB600BFE895 /* Debug */,
+				3C97C1D71631CCB600BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C97C1D81631CCB600BFE895 /* Build configuration list for PBXNativeTarget "iconv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97C1D91631CCB600BFE895 /* Debug */,
+				3C97C1DA1631CCB600BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C97C1C11631CCB600BFE895 /* Project object */;
+}

@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C97C0211631C36000BFE895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97C0201631C36000BFE895 /* Foundation.framework */; };
+		3C97C04C1631C3FA00BFE895 /* pixman-access-accessors.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0341631C3FA00BFE895 /* pixman-access-accessors.c */; };
+		3C97C04D1631C3FA00BFE895 /* pixman-access.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0351631C3FA00BFE895 /* pixman-access.c */; };
+		3C97C04E1631C3FA00BFE895 /* pixman-bits-image.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0361631C3FA00BFE895 /* pixman-bits-image.c */; };
+		3C97C04F1631C3FA00BFE895 /* pixman-combine32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0371631C3FA00BFE895 /* pixman-combine32.c */; };
+		3C97C0501631C3FA00BFE895 /* pixman-combine64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0381631C3FA00BFE895 /* pixman-combine64.c */; };
+		3C97C0511631C3FA00BFE895 /* pixman-conical-gradient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0391631C3FA00BFE895 /* pixman-conical-gradient.c */; };
+		3C97C0521631C3FA00BFE895 /* pixman-cpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03A1631C3FA00BFE895 /* pixman-cpu.c */; };
+		3C97C0531631C3FA00BFE895 /* pixman-edge-accessors.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03B1631C3FA00BFE895 /* pixman-edge-accessors.c */; };
+		3C97C0541631C3FA00BFE895 /* pixman-edge.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03C1631C3FA00BFE895 /* pixman-edge.c */; };
+		3C97C0551631C3FA00BFE895 /* pixman-fast-path.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03D1631C3FA00BFE895 /* pixman-fast-path.c */; };
+		3C97C0561631C3FA00BFE895 /* pixman-general.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03E1631C3FA00BFE895 /* pixman-general.c */; };
+		3C97C0571631C3FA00BFE895 /* pixman-gradient-walker.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C03F1631C3FA00BFE895 /* pixman-gradient-walker.c */; };
+		3C97C0581631C3FA00BFE895 /* pixman-image.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0401631C3FA00BFE895 /* pixman-image.c */; };
+		3C97C0591631C3FA00BFE895 /* pixman-implementation.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0411631C3FA00BFE895 /* pixman-implementation.c */; };
+		3C97C05A1631C3FA00BFE895 /* pixman-linear-gradient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0421631C3FA00BFE895 /* pixman-linear-gradient.c */; };
+		3C97C05B1631C3FA00BFE895 /* pixman-matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0431631C3FA00BFE895 /* pixman-matrix.c */; };
+		3C97C05C1631C3FA00BFE895 /* pixman-radial-gradient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0441631C3FA00BFE895 /* pixman-radial-gradient.c */; };
+		3C97C05D1631C3FA00BFE895 /* pixman-region16.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0451631C3FA00BFE895 /* pixman-region16.c */; };
+		3C97C05E1631C3FA00BFE895 /* pixman-region32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0461631C3FA00BFE895 /* pixman-region32.c */; };
+		3C97C05F1631C3FA00BFE895 /* pixman-solid-fill.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0471631C3FA00BFE895 /* pixman-solid-fill.c */; };
+		3C97C0601631C3FA00BFE895 /* pixman-timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0481631C3FA00BFE895 /* pixman-timer.c */; };
+		3C97C0611631C3FA00BFE895 /* pixman-trap.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C0491631C3FA00BFE895 /* pixman-trap.c */; };
+		3C97C0621631C3FA00BFE895 /* pixman-utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C04A1631C3FA00BFE895 /* pixman-utils.c */; };
+		3C97C0631631C3FA00BFE895 /* pixman.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C97C04B1631C3FA00BFE895 /* pixman.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C97C01B1631C36000BFE895 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C97C01D1631C36000BFE895 /* libpixman.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpixman.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C97C0201631C36000BFE895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3C97C0241631C36000BFE895 /* pixman-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pixman-Prefix.pch"; sourceTree = "<group>"; };
+		3C97C0341631C3FA00BFE895 /* pixman-access-accessors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-access-accessors.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-access-accessors.c"; sourceTree = "<group>"; };
+		3C97C0351631C3FA00BFE895 /* pixman-access.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-access.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-access.c"; sourceTree = "<group>"; };
+		3C97C0361631C3FA00BFE895 /* pixman-bits-image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-bits-image.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-bits-image.c"; sourceTree = "<group>"; };
+		3C97C0371631C3FA00BFE895 /* pixman-combine32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-combine32.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-combine32.c"; sourceTree = "<group>"; };
+		3C97C0381631C3FA00BFE895 /* pixman-combine64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-combine64.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-combine64.c"; sourceTree = "<group>"; };
+		3C97C0391631C3FA00BFE895 /* pixman-conical-gradient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-conical-gradient.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-conical-gradient.c"; sourceTree = "<group>"; };
+		3C97C03A1631C3FA00BFE895 /* pixman-cpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-cpu.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-cpu.c"; sourceTree = "<group>"; };
+		3C97C03B1631C3FA00BFE895 /* pixman-edge-accessors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-edge-accessors.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-edge-accessors.c"; sourceTree = "<group>"; };
+		3C97C03C1631C3FA00BFE895 /* pixman-edge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-edge.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-edge.c"; sourceTree = "<group>"; };
+		3C97C03D1631C3FA00BFE895 /* pixman-fast-path.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-fast-path.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-fast-path.c"; sourceTree = "<group>"; };
+		3C97C03E1631C3FA00BFE895 /* pixman-general.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-general.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-general.c"; sourceTree = "<group>"; };
+		3C97C03F1631C3FA00BFE895 /* pixman-gradient-walker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-gradient-walker.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-gradient-walker.c"; sourceTree = "<group>"; };
+		3C97C0401631C3FA00BFE895 /* pixman-image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-image.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-image.c"; sourceTree = "<group>"; };
+		3C97C0411631C3FA00BFE895 /* pixman-implementation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-implementation.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-implementation.c"; sourceTree = "<group>"; };
+		3C97C0421631C3FA00BFE895 /* pixman-linear-gradient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-linear-gradient.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-linear-gradient.c"; sourceTree = "<group>"; };
+		3C97C0431631C3FA00BFE895 /* pixman-matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-matrix.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-matrix.c"; sourceTree = "<group>"; };
+		3C97C0441631C3FA00BFE895 /* pixman-radial-gradient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-radial-gradient.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-radial-gradient.c"; sourceTree = "<group>"; };
+		3C97C0451631C3FA00BFE895 /* pixman-region16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-region16.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-region16.c"; sourceTree = "<group>"; };
+		3C97C0461631C3FA00BFE895 /* pixman-region32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-region32.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-region32.c"; sourceTree = "<group>"; };
+		3C97C0471631C3FA00BFE895 /* pixman-solid-fill.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-solid-fill.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-solid-fill.c"; sourceTree = "<group>"; };
+		3C97C0481631C3FA00BFE895 /* pixman-timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-timer.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-timer.c"; sourceTree = "<group>"; };
+		3C97C0491631C3FA00BFE895 /* pixman-trap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-trap.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-trap.c"; sourceTree = "<group>"; };
+		3C97C04A1631C3FA00BFE895 /* pixman-utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pixman-utils.c"; path = "../../../../lib/pixman-0.21.2/pixman/pixman-utils.c"; sourceTree = "<group>"; };
+		3C97C04B1631C3FA00BFE895 /* pixman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pixman.c; path = "../../../../lib/pixman-0.21.2/pixman/pixman.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C97C01A1631C36000BFE895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97C0211631C36000BFE895 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C97C0121631C36000BFE895 = {
+			isa = PBXGroup;
+			children = (
+				3C97C0221631C36000BFE895 /* pixman */,
+				3C97C01F1631C36000BFE895 /* Frameworks */,
+				3C97C01E1631C36000BFE895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C97C01E1631C36000BFE895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C01D1631C36000BFE895 /* libpixman.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C97C01F1631C36000BFE895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C0201631C36000BFE895 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C97C0221631C36000BFE895 /* pixman */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C0341631C3FA00BFE895 /* pixman-access-accessors.c */,
+				3C97C0351631C3FA00BFE895 /* pixman-access.c */,
+				3C97C0361631C3FA00BFE895 /* pixman-bits-image.c */,
+				3C97C0371631C3FA00BFE895 /* pixman-combine32.c */,
+				3C97C0381631C3FA00BFE895 /* pixman-combine64.c */,
+				3C97C0391631C3FA00BFE895 /* pixman-conical-gradient.c */,
+				3C97C03A1631C3FA00BFE895 /* pixman-cpu.c */,
+				3C97C03B1631C3FA00BFE895 /* pixman-edge-accessors.c */,
+				3C97C03C1631C3FA00BFE895 /* pixman-edge.c */,
+				3C97C03D1631C3FA00BFE895 /* pixman-fast-path.c */,
+				3C97C03E1631C3FA00BFE895 /* pixman-general.c */,
+				3C97C03F1631C3FA00BFE895 /* pixman-gradient-walker.c */,
+				3C97C0401631C3FA00BFE895 /* pixman-image.c */,
+				3C97C0411631C3FA00BFE895 /* pixman-implementation.c */,
+				3C97C0421631C3FA00BFE895 /* pixman-linear-gradient.c */,
+				3C97C0431631C3FA00BFE895 /* pixman-matrix.c */,
+				3C97C0441631C3FA00BFE895 /* pixman-radial-gradient.c */,
+				3C97C0451631C3FA00BFE895 /* pixman-region16.c */,
+				3C97C0461631C3FA00BFE895 /* pixman-region32.c */,
+				3C97C0471631C3FA00BFE895 /* pixman-solid-fill.c */,
+				3C97C0481631C3FA00BFE895 /* pixman-timer.c */,
+				3C97C0491631C3FA00BFE895 /* pixman-trap.c */,
+				3C97C04A1631C3FA00BFE895 /* pixman-utils.c */,
+				3C97C04B1631C3FA00BFE895 /* pixman.c */,
+				3C97C0231631C36000BFE895 /* Supporting Files */,
+			);
+			path = pixman;
+			sourceTree = "<group>";
+		};
+		3C97C0231631C36000BFE895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C97C0241631C36000BFE895 /* pixman-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C97C01C1631C36000BFE895 /* pixman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C97C02B1631C36000BFE895 /* Build configuration list for PBXNativeTarget "pixman" */;
+			buildPhases = (
+				3C97C0191631C36000BFE895 /* Sources */,
+				3C97C01A1631C36000BFE895 /* Frameworks */,
+				3C97C01B1631C36000BFE895 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pixman;
+			productName = pixman;
+			productReference = 3C97C01D1631C36000BFE895 /* libpixman.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C97C0141631C36000BFE895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "dai lin";
+			};
+			buildConfigurationList = 3C97C0171631C36000BFE895 /* Build configuration list for PBXProject "pixman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C97C0121631C36000BFE895;
+			productRefGroup = 3C97C01E1631C36000BFE895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C97C01C1631C36000BFE895 /* pixman */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C97C0191631C36000BFE895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C97C04C1631C3FA00BFE895 /* pixman-access-accessors.c in Sources */,
+				3C97C04D1631C3FA00BFE895 /* pixman-access.c in Sources */,
+				3C97C04E1631C3FA00BFE895 /* pixman-bits-image.c in Sources */,
+				3C97C04F1631C3FA00BFE895 /* pixman-combine32.c in Sources */,
+				3C97C0501631C3FA00BFE895 /* pixman-combine64.c in Sources */,
+				3C97C0511631C3FA00BFE895 /* pixman-conical-gradient.c in Sources */,
+				3C97C0521631C3FA00BFE895 /* pixman-cpu.c in Sources */,
+				3C97C0531631C3FA00BFE895 /* pixman-edge-accessors.c in Sources */,
+				3C97C0541631C3FA00BFE895 /* pixman-edge.c in Sources */,
+				3C97C0551631C3FA00BFE895 /* pixman-fast-path.c in Sources */,
+				3C97C0561631C3FA00BFE895 /* pixman-general.c in Sources */,
+				3C97C0571631C3FA00BFE895 /* pixman-gradient-walker.c in Sources */,
+				3C97C0581631C3FA00BFE895 /* pixman-image.c in Sources */,
+				3C97C0591631C3FA00BFE895 /* pixman-implementation.c in Sources */,
+				3C97C05A1631C3FA00BFE895 /* pixman-linear-gradient.c in Sources */,
+				3C97C05B1631C3FA00BFE895 /* pixman-matrix.c in Sources */,
+				3C97C05C1631C3FA00BFE895 /* pixman-radial-gradient.c in Sources */,
+				3C97C05D1631C3FA00BFE895 /* pixman-region16.c in Sources */,
+				3C97C05E1631C3FA00BFE895 /* pixman-region32.c in Sources */,
+				3C97C05F1631C3FA00BFE895 /* pixman-solid-fill.c in Sources */,
+				3C97C0601631C3FA00BFE895 /* pixman-timer.c in Sources */,
+				3C97C0611631C3FA00BFE895 /* pixman-trap.c in Sources */,
+				3C97C0621631C3FA00BFE895 /* pixman-utils.c in Sources */,
+				3C97C0631631C3FA00BFE895 /* pixman.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C97C0291631C36000BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C97C02A1631C36000BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C97C02C1631C36000BFE895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/pixman.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pixman/pixman-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					_USE_MATH_DEFINES,
+					PIXMAN_NO_TLS,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/pixman-0.21.2/pixman\"",
+					"\"$(SRCROOT)/../../../lib/pixman-0.21.2\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3C97C02D1631C36000BFE895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/pixman.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pixman/pixman-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					_USE_MATH_DEFINES,
+					PIXMAN_NO_TLS,
+				);
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../lib/pixman-0.21.2/pixman\"",
+					"\"$(SRCROOT)/../../../lib/pixman-0.21.2\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C97C0171631C36000BFE895 /* Build configuration list for PBXProject "pixman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97C0291631C36000BFE895 /* Debug */,
+				3C97C02A1631C36000BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C97C02B1631C36000BFE895 /* Build configuration list for PBXNativeTarget "pixman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C97C02C1631C36000BFE895 /* Debug */,
+				3C97C02D1631C36000BFE895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C97C0141631C36000BFE895 /* Project object */;
+}
