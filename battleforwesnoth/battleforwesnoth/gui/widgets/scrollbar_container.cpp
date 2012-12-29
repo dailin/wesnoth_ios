@@ -447,8 +447,12 @@ const twidget* tscrollbar_container::find(
 bool tscrollbar_container::disable_click_dismiss() const
 {
 	assert(content_grid_);
+#ifndef USE_TINY_GUI
 	return tcontainer_::disable_click_dismiss()
-			|| content_grid_->disable_click_dismiss();
+			|| content_grid_->disable_click_dismiss(); //dailin
+#else
+    return false;
+#endif
 }
 
 bool tscrollbar_container::content_resize_request(const bool force_sizing)

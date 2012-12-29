@@ -2747,124 +2747,124 @@ void server::update_game_in_lobby(const wesnothd::game* g, network::connection e
        #include <unistd.h>
 #endif
 
-//int main(int argc, char** argv) {
-//	int port = 15000;
-//	size_t min_threads = 5;
-//	size_t max_threads = 0;
-//
-//	srand(static_cast<unsigned>(time(NULL)));
-//
-//	std::string config_file;
-//
-//	// setting path to currentworking directory
-//	game_config::path = get_cwd();
-//
-//	// show 'info' by default
-//	lg::set_log_domain_severity("server", 2);
-//	lg::timestamps(true);
-//
-//	for (int arg = 1; arg != argc; ++arg) {
-//		const std::string val(argv[arg]);
-//		if (val.empty()) {
-//			continue;
-//		}
-//
-//		if ((val == "--config" || val == "-c") && arg+1 != argc) {
-//			config_file = argv[++arg];
-//		} else if (val == "--verbose" || val == "-v") {
-//			lg::set_log_domain_severity("all", 3);
-//		} else if (val.substr(0, 6) == "--log-") {
-//			size_t p = val.find('=');
-//			if (p == std::string::npos) {
-//				std::cerr << "unknown option: " << val << '\n';
-//				return 2;
-//			}
-//			std::string s = val.substr(6, p - 6);
-//			int severity;
-//			if (s == "error") severity = 0;
-//			else if (s == "warning") severity = 1;
-//			else if (s == "info") severity = 2;
-//			else if (s == "debug") severity = 3;
-//			else {
-//				std::cerr << "unknown debug level: " << s << '\n';
-//				return 2;
-//			}
-//			while (p != std::string::npos) {
-//				size_t q = val.find(',', p + 1);
-//				s = val.substr(p + 1, q == std::string::npos ? q : q - (p + 1));
-//				if (!lg::set_log_domain_severity(s, severity)) {
-//					std::cerr << "unknown debug domain: " << s << '\n';
-//					return 2;
-//				}
-//				p = q;
-//			}
-//		} else if ((val == "--port" || val == "-p") && arg+1 != argc) {
-//			port = atoi(argv[++arg]);
-//		} else if (val == "--help" || val == "-h") {
-//			std::cout << "usage: " << argv[0]
-//				<< " [-dvV] [-c path] [-m n] [-p port] [-t n]\n"
-//				<< "  -c, --config <path>        Tells wesnothd where to find the config file to use.\n"
-//				<< "  -d, --daemon               Runs wesnothd as a daemon.\n"
-//				<< "  -h, --help                 Shows this usage message.\n"
-//				<< "  --log-<level>=<domain1>,<domain2>,...\n"
-//				<< "                             sets the severity level of the debug domains.\n"
-//				<< "                             'all' can be used to match any debug domain.\n"
-//				<< "                             Available levels: error, warning, info, debug.\n"
-//				<< "  -p, --port <port>          Binds the server to the specified port.\n"
-//				<< "  -t, --threads <n>          Uses n worker threads for network I/O (default: 5).\n"
-//				<< "  -v  --verbose              Turns on more verbose logging.\n"
-//				<< "  -V, --version              Returns the server version.\n";
-//			return 0;
-//		} else if (val == "--version" || val == "-V") {
-//			std::cout << "Battle for Wesnoth server " << game_config::version
-//				<< "\n";
-//			return 0;
-//		} else if (val == "--daemon" || val == "-d") {
-//#ifdef _WIN32
-//			ERR_SERVER << "Running as a daemon is not supported on this platform\n";
-//			return -1;
-//#else
-//			const pid_t pid = fork();
-//			if (pid < 0) {
-//				ERR_SERVER << "Could not fork and run as a daemon\n";
-//				return -1;
-//			} else if (pid > 0) {
-//				std::cout << "Started wesnothd as a daemon with process id "
-//					<< pid << "\n";
-//				return 0;
-//			}
-//
-//			setsid();
-//#endif
-//		} else if ((val == "--threads" || val == "-t") && arg+1 != argc) {
-//			min_threads = atoi(argv[++arg]);
-//			if (min_threads > 30) {
-//				min_threads = 30;
-//			}
-//		} else if ((val == "--max-threads" || val == "-T") && arg+1 != argc) {
-//			max_threads = atoi(argv[++arg]);
-//		} else if(val == "--request_sample_frequency" && arg+1 != argc) {
-//			request_sample_frequency = atoi(argv[++arg]);
-//		} else {
-//			ERR_SERVER << "unknown option: " << val << "\n";
-//			return 2;
-//		}
-//	}
-//
-//	network::set_raw_data_only();
-//
-//	try {
-//		server(port, config_file, min_threads, max_threads).run();
-//	} catch(network::error& e) {
-//		ERR_SERVER << "Caught network error while server was running. Aborting.: "
-//			<< e.message << "\n";
-//
-//		/**
-//		 * @todo errno should be passed here with the error or it might not be
-//		 * the true errno anymore. Seems to work good enough for now though.
-//		 */
-//		return errno;
-//	}
-//
-//	return 0;
-//}
+int main(int argc, char** argv) {
+	int port = 15000;
+	size_t min_threads = 5;
+	size_t max_threads = 0;
+
+	srand(static_cast<unsigned>(time(NULL)));
+
+	std::string config_file;
+
+	// setting path to currentworking directory
+	game_config::path = get_cwd();
+
+	// show 'info' by default
+	lg::set_log_domain_severity("server", 2);
+	lg::timestamps(true);
+
+	for (int arg = 1; arg != argc; ++arg) {
+		const std::string val(argv[arg]);
+		if (val.empty()) {
+			continue;
+		}
+
+		if ((val == "--config" || val == "-c") && arg+1 != argc) {
+			config_file = argv[++arg];
+		} else if (val == "--verbose" || val == "-v") {
+			lg::set_log_domain_severity("all", 3);
+		} else if (val.substr(0, 6) == "--log-") {
+			size_t p = val.find('=');
+			if (p == std::string::npos) {
+				std::cerr << "unknown option: " << val << '\n';
+				return 2;
+			}
+			std::string s = val.substr(6, p - 6);
+			int severity;
+			if (s == "error") severity = 0;
+			else if (s == "warning") severity = 1;
+			else if (s == "info") severity = 2;
+			else if (s == "debug") severity = 3;
+			else {
+				std::cerr << "unknown debug level: " << s << '\n';
+				return 2;
+			}
+			while (p != std::string::npos) {
+				size_t q = val.find(',', p + 1);
+				s = val.substr(p + 1, q == std::string::npos ? q : q - (p + 1));
+				if (!lg::set_log_domain_severity(s, severity)) {
+					std::cerr << "unknown debug domain: " << s << '\n';
+					return 2;
+				}
+				p = q;
+			}
+		} else if ((val == "--port" || val == "-p") && arg+1 != argc) {
+			port = atoi(argv[++arg]);
+		} else if (val == "--help" || val == "-h") {
+			std::cout << "usage: " << argv[0]
+				<< " [-dvV] [-c path] [-m n] [-p port] [-t n]\n"
+				<< "  -c, --config <path>        Tells wesnothd where to find the config file to use.\n"
+				<< "  -d, --daemon               Runs wesnothd as a daemon.\n"
+				<< "  -h, --help                 Shows this usage message.\n"
+				<< "  --log-<level>=<domain1>,<domain2>,...\n"
+				<< "                             sets the severity level of the debug domains.\n"
+				<< "                             'all' can be used to match any debug domain.\n"
+				<< "                             Available levels: error, warning, info, debug.\n"
+				<< "  -p, --port <port>          Binds the server to the specified port.\n"
+				<< "  -t, --threads <n>          Uses n worker threads for network I/O (default: 5).\n"
+				<< "  -v  --verbose              Turns on more verbose logging.\n"
+				<< "  -V, --version              Returns the server version.\n";
+			return 0;
+		} else if (val == "--version" || val == "-V") {
+			std::cout << "Battle for Wesnoth server " << game_config::version
+				<< "\n";
+			return 0;
+		} else if (val == "--daemon" || val == "-d") {
+#ifdef _WIN32
+			ERR_SERVER << "Running as a daemon is not supported on this platform\n";
+			return -1;
+#else
+			const pid_t pid = fork();
+			if (pid < 0) {
+				ERR_SERVER << "Could not fork and run as a daemon\n";
+				return -1;
+			} else if (pid > 0) {
+				std::cout << "Started wesnothd as a daemon with process id "
+					<< pid << "\n";
+				return 0;
+			}
+
+			setsid();
+#endif
+		} else if ((val == "--threads" || val == "-t") && arg+1 != argc) {
+			min_threads = atoi(argv[++arg]);
+			if (min_threads > 30) {
+				min_threads = 30;
+			}
+		} else if ((val == "--max-threads" || val == "-T") && arg+1 != argc) {
+			max_threads = atoi(argv[++arg]);
+		} else if(val == "--request_sample_frequency" && arg+1 != argc) {
+			request_sample_frequency = atoi(argv[++arg]);
+		} else {
+			ERR_SERVER << "unknown option: " << val << "\n";
+			return 2;
+		}
+	}
+
+	network::set_raw_data_only();
+
+	try {
+		server(port, config_file, min_threads, max_threads).run();
+	} catch(network::error& e) {
+		ERR_SERVER << "Caught network error while server was running. Aborting.: "
+			<< e.message << "\n";
+
+		/**
+		 * @todo errno should be passed here with the error or it might not be
+		 * the true errno anymore. Seems to work good enough for now though.
+		 */
+		return errno;
+	}
+
+	return 0;
+}

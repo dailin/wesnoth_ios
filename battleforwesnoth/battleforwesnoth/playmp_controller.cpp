@@ -1,4 +1,4 @@
-/* $Id: playmp_controller.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: playmp_controller.cpp 55477 2012-10-03 17:03:01Z lipk $ */
 /*
    Copyright (C) 2006 - 2012 by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
    wesnoth playlevel Copyright (C) 2003 by David White <dave@whitevine.net>
@@ -491,7 +491,6 @@ void playmp_controller::play_network_turn(){
 				}
 				const turn_info::PROCESS_DATA_RESULT result = turn_data.process_network_data(cfg, from, data_backlog_, skip_replay_);
 				if (result == turn_info::PROCESS_RESTART_TURN) {
-					update_gui_to_player(player_number_ - 1);
 					player_type_changed_ = true;
 					return;
 				} else if (result == turn_info::PROCESS_END_TURN) {

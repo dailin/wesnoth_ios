@@ -347,18 +347,18 @@ tpoint tcontrol::get_best_text_size(
 	tpoint size = minimum_size - border;
 
 	renderer_.set_text(label_, use_markup_);
-#ifdef USE_TINY_GUI
-    if ((label_.str() == "Tutorial") || (label_.str() == "Campaign") || (label_.str() == "Multiplayer") || (label_.str() == "Load") || (label_.str() == "Add-ons") || (label_.str() == "Preferences") || (label_.str() == "Credits"))
-    {
-        renderer_.set_font_size(20);
-    }
-    else
-    {
-#endif
+//#ifdef USE_TINY_GUI
+//    if ((label_.str() == "Tutorial") || (label_.str() == "Campaign") || (label_.str() == "Multiplayer") || (label_.str() == "Load") || (label_.str() == "Add-ons") || (label_.str() == "Preferences") || (label_.str() == "Credits"))
+//    {
+//        renderer_.set_font_size(20);
+//    }
+//    else
+//    {
+//#endif
 	    renderer_.set_font_size(config_->text_font_size);
-#ifdef USE_TINY_GUI
-    }
-#endif
+//#ifdef USE_TINY_GUI
+//    }
+//#endif
 	renderer_.set_font_style(config_->text_font_style);
 	renderer_.set_alignment(text_alignment_);
 

@@ -238,22 +238,19 @@ void dialog::set_textbox(const std::string& text_widget_label,
 	text_widget_->set_wrap(!editable_textbox);
 }
 
+#ifdef USE_TINY_GUI
+void dialog::set_menu_bigger(const std::vector<std::string> &menu_items, menu::sorter* sorter)
+{
+    set_menu(new gui::menu(disp_.video(), menu_items, (type_==MESSAGE),
+                           -1, dialog::max_menu_width, sorter, &menu::bigger_style, false));
+
+}
+#endif
+
 void dialog::set_menu(const std::vector<std::string> &menu_items, menu::sorter* sorter)
 {
-#ifdef USE_TINY_GUI
-    if (menu_items[menu_items.size()-1] == "Next Unit=" || menu_items[menu_items.size()-1] == "=Next Unit=" || menu_items[menu_items.size()-1] == "Quit Game=")
-	{
-		set_menu(new gui::menu(disp_.video(), menu_items, (type_==MESSAGE),
-							   -1, dialog::max_menu_width, sorter, &menu::bigger_style, false));
-	}
-	else
-	{
-#endif
 	set_menu(new gui::menu(disp_.video(), menu_items, (type_==MESSAGE),
 		-1, dialog::max_menu_width, sorter, &menu::default_style, false));
-#ifdef USE_TINY_GUI
-    }
-#endif
 }
 
 void dialog::set_menu_items(const std::vector<std::string> &menu_items)
@@ -656,21 +653,21 @@ dialog::dimension_measurements dialog::layout(int xloc, int yloc)
 	dim.menu_x = dim.x+image_width+left_padding+image_h_padding;
 	dim.menu_y = dim.y+top_padding+text_and_image_height+menu_hpadding+ (use_textbox ? text_widget_->location().h + top_padding : 0);
 
-#ifdef USE_TINY_GUI
-	if (dim.interior.y == 0 && dim.menu_y < 100)
-	{
-		//dim.menu_y -= 4;
-        //		dim.menu_y -= 24;
-        //		dim.menu_height += 24;
-		dim.menu_y -= 8;//4;
-		dim.menu_height += 4;
-		if (left_preview_pane_width > 0)
-		{
-			dim.menu_y -= 8;
-			dim.menu_height += 8;
-		}
-	}
-#endif
+//#ifdef USE_TINY_GUI
+//	if (dim.interior.y == 0 && dim.menu_y < 100)
+//	{
+//		//dim.menu_y -= 4;
+//        //		dim.menu_y -= 24;
+//        //		dim.menu_height += 24;
+//		dim.menu_y -= 18;//4;
+//		dim.menu_height += 4;
+//		if (left_preview_pane_width > 0)
+//		{
+//			dim.menu_y -= 8;
+//			dim.menu_height += 8;
+//		}
+//	}
+//#endif
 
 	dim.message.x = dim.x + left_padding;
 	dim.message.y = dim.y + top_padding + caption_height;

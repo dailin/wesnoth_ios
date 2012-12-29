@@ -222,7 +222,9 @@ public:
 	 * At the moment the request is always honoured but that might change in the
 	 * future.
 	 */
-	void close() { status_ = REQUEST_CLOSE; }
+	void close() {
+        status_ = REQUEST_CLOSE;
+    }
 
 	/**
 	 * Helper class to block invalidate_layout.

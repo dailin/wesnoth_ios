@@ -47,7 +47,9 @@ Growl_Delegate growl_obj;
 #include "whiteboard/manager.hpp"
 
 #include <boost/foreach.hpp>
-
+#ifdef __IPHONEOS__
+extern bool gIsDragging;
+#endif
 static lg::log_domain log_display("display");
 #define ERR_DP LOG_STREAM(err, log_display)
 #define LOG_DP LOG_STREAM(info, log_display)
@@ -886,6 +888,11 @@ const SDL_Rect& game_display::calculate_energy_bar(surface surf)
 }
 
 void game_display::invalidate_animations_location(const map_location& loc) {
+#ifdef __IPHONEOS__
+    if (gIsDragging)
+		return;
+#endif
+
 	if (get_map().is_village(loc)) {
 		const int owner = player_teams::village_owner(loc);
 		if (owner >= 0 && flags_[owner].need_update()

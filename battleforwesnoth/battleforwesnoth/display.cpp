@@ -59,6 +59,18 @@ static lg::log_domain log_display("display");
 #define LOG_DP LOG_STREAM(info, log_display)
 #define DBG_DP LOG_STREAM(debug, log_display)
 
+#ifdef __IPHONEOS__
+#ifndef USE_TINY_GUI
+#define SCROLL_FRICTION	1000.0f
+#define QUICK_SCROLL
+#else
+#define SCROLL_FRICTION	700.0f
+#endif
+#endif
+
+#ifdef __IPHONEOS__
+extern bool gIsDragging;
+#endif
 namespace {
 	const int DefaultZoom = 72;
 	const int SmallZoom   = DefaultZoom / 2;
@@ -80,6 +92,11 @@ display::display(CVideo& video, const gamemap* map, const config& theme_cfg, con
 	viewpoint_(NULL),
 	xpos_(0),
 	ypos_(0),
+#ifdef __IPHONEOS__
+    scroll_velocity_x_(0),
+    scroll_velocity_y_(0),
+    start_scroll_(false),
+#endif
 	theme_(theme_cfg, screen_area()),
 	zoom_(DefaultZoom),
 	builder_(new terrain_builder(level, map, theme_.border().tile_image)),
@@ -1241,7 +1258,75 @@ void display::draw_wrap(bool update, bool force)
 {
 	static const int time_between_draws = preferences::draw_delay();
 	const int current_time = SDL_GetTicks();
-	const int wait_time = nextDraw_ - current_time;
+	int wait_time = nextDraw_ - current_time;
+
+#ifdef __IPHONEOS__
+    // KP: ensure responsive map scrolling
+	if (wait_time < 10)
+		wait_time = 10;
+	
+
+	// KP: update scroll velocity
+	if (scroll_velocity_x_ != 0 || scroll_velocity_y_ != 0)
+	{
+		float lastX = xposf_;
+		float lastY = yposf_;
+		float seconds = (float)(current_time-scroll_velocity_last_update_)/1000;
+		float newX = lastX + scroll_velocity_x_*seconds;
+		float newY = lastY + scroll_velocity_y_*seconds;
+		int diffX = newX - lastX;
+		int diffY = newY - lastY;
+		if (diffX != 0 || diffY != 0)
+			scroll(-diffX, -diffY);
+		
+		// some complex 2d math...
+		float vectorLength = sqrt(scroll_velocity_x_*scroll_velocity_x_ + scroll_velocity_y_*scroll_velocity_y_);
+		float directionX = scroll_velocity_x_ / vectorLength;
+		float directionY = scroll_velocity_y_ / vectorLength;
+		if (directionX < 0)
+			directionX = -directionX;
+		if (directionY < 0)
+			directionY = -directionY;
+		
+		
+		if (scroll_velocity_x_ > 0)
+		{
+			scroll_velocity_x_ -= directionX*SCROLL_FRICTION*seconds;
+			if (scroll_velocity_x_ < 0)
+				scroll_velocity_x_ = 0;
+		}
+		else
+		{
+			scroll_velocity_x_ += directionX*SCROLL_FRICTION*seconds;
+			if (scroll_velocity_x_ > 0)
+				scroll_velocity_x_ = 0;
+		}
+		if (scroll_velocity_y_ > 0)
+		{
+			scroll_velocity_y_ -= directionY*SCROLL_FRICTION*seconds;
+			if (scroll_velocity_y_ < 0)
+				scroll_velocity_y_ = 0;
+		}
+		else
+		{
+			scroll_velocity_y_ += directionY*SCROLL_FRICTION*seconds;
+			if (scroll_velocity_y_ > 0)
+				scroll_velocity_y_ = 0;
+		}
+		
+		xposf_ = newX;
+		yposf_ = newY;
+		scroll_velocity_last_update_ = current_time;
+	}
+    else
+    {
+        if (start_scroll_)
+        {
+            start_scroll_ = false;
+            gIsDragging = false;
+        }
+    }
+#endif
 
 	if(redrawMinimap_) {
 		redrawMinimap_ = false;
@@ -1516,6 +1601,18 @@ bool display::scroll(int xmove, int ymove)
 	redrawMinimap_ = true;
 	return true;
 }
+
+#ifdef __IPHONEOS__
+void display::set_scroll_velocity(float xVelocity, float yVelocity, bool flag)
+{
+	xposf_ = xpos_;
+	yposf_ = ypos_;
+	scroll_velocity_x_ = xVelocity;
+	scroll_velocity_y_ = yVelocity;
+	scroll_velocity_last_update_ = SDL_GetTicks();
+    start_scroll_ = flag;
+}
+#endif
 
 void display::set_zoom(int amount)
 {
@@ -2456,6 +2553,7 @@ void display::invalidate_animations()
 {
 	new_animation_frame();
 	animate_map_ = preferences::animate_map();
+
 	if (!animate_map_) return;
 
 	BOOST_FOREACH(const map_location &loc, get_visible_hexes())

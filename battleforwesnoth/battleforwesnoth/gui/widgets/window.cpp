@@ -325,7 +325,11 @@ twindow::twindow(CVideo& video,
 			  boost::bind(&event::tdistributor::initialize_state
 				  , event_distributor_));
 
+#ifndef __IPHONEOS__
 	connect_signal<event::SDL_LEFT_BUTTON_DOWN>(
+#else
+    connect_signal<event::SDL_LEFT_BUTTON_UP>(
+#endif
 			  boost::bind(
 				  &twindow::signal_handler_click_dismiss, this, _2, _3, _4)
 			, event::tdispatcher::front_child);

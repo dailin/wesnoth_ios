@@ -1,4 +1,4 @@
-/* $Id: forum_user_handler.cpp 52533 2012-01-07 02:35:17Z shadowmaster $ */
+/* $Id: forum_user_handler.cpp 55168 2012-08-27 07:11:38Z shadowmaster $ */
 /*
    Copyright (C) 2008 - 2012 by Thomas Baumhauer <thomas.baumhauer@NOSPAMgmail.com>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -178,7 +178,7 @@ std::string fuh::user_info(const std::string& name) {
 	if(ll_date) {
 		ll_string = ctime(&ll_date);
 	} else {
-		ll_string = "Never";
+		ll_string = "Never\n";
 	}
 
 	std::stringstream info;

@@ -1,4 +1,4 @@
-/* $Id: actions.cpp 54786 2012-07-19 05:11:45Z jamit $ */
+/* $Id: actions.cpp 55559 2012-10-20 16:18:38Z jamit $ */
 /*
    Copyright (C) 2003 - 2012 by David White <dave@whitevine.net>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -1139,6 +1139,11 @@ battle_context_unit_stats::battle_context_unit_stats(const unit &u, const map_lo
 			swarm = true;
 			swarm_min = swarm_specials.highest("swarm_attacks_min").first;
 			swarm_max = swarm_specials.highest("swarm_attacks_max", weapon->num_attacks()).first;
+			if ( swarm_min > swarm_max ) {
+				// This causes problems in the attack prediction.
+				ERR_NG << "Minimum swarm attacks cannot exceed maximum swarm attacks in this version.\n";
+				swarm_min = swarm_max;
+			}
 			num_blows = swarm_min + (swarm_max - swarm_min) * hp / max_hp;
 		} else {
 			swarm = false;

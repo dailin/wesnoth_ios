@@ -1,4 +1,4 @@
-/* $Id: menu_events.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: menu_events.cpp 55288 2012-09-14 17:19:30Z jamit $ */
 /*
    Copyright (C) 2006 - 2012 by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
    wesnoth playturn Copyright (C) 2003 by David White <dave@whitevine.net>
@@ -119,14 +119,16 @@ gui::dialog_button_action::RESULT delete_recall_unit::button_pressed(int menu_se
 		//add dismissal to the undo stack
 		resources::undo_stack->push_back(undo_action(u, map_location(), map_location(), undo_action::DISMISS));
 
-		//remove the unit from the recall list
+		// Find the unit in the recall list.
 		std::vector<unit>& recall_list = (*resources::teams)[u.side() -1].recall_list();
 		assert(!recall_list.empty());
 		std::vector<unit>::iterator dismissed_unit =
-				std::find_if(recall_list.begin(), recall_list.end(), boost::bind(&unit::matches_id, _1, u.id()));
+        std::find_if(recall_list.begin(), recall_list.end(), boost::bind(&unit::matches_id, _1, u.id()));
 		assert(dismissed_unit != recall_list.end());
-		recall_list.erase(dismissed_unit);
+		
+		// Record the dismissal, then delete the unit.
 		recorder.add_disband(dismissed_unit->id());
+		recall_list.erase(dismissed_unit);
 
 		//clear the redo stack to avoid duplication of dismissals
 		resources::redo_stack->clear();
@@ -316,7 +318,9 @@ void menu_handler::unit_list()
 
 		gui::dialog umenu(*gui_, _("Unit List"), "", gui::NULL_DIALOG);
 		umenu.set_menu(items, &sorter);
-//		umenu.add_pane(&unit_preview);dailin
+#ifndef USE_TINY_GUI
+		umenu.add_pane(&unit_preview);
+#endif
 		//sort by type name
 		umenu.get_menu().sort_by(0);
 

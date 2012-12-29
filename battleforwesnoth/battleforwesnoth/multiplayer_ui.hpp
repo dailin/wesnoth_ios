@@ -1,4 +1,4 @@
-/* $Id: multiplayer_ui.hpp 52533 2012-01-07 02:35:17Z shadowmaster $ */
+/* $Id: multiplayer_ui.hpp 55572 2012-10-21 20:19:52Z lipk $ */
 /*
    Copyright (C) 2007 - 2012
    Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -79,8 +79,7 @@ public:
 	enum result { CONTINUE, JOIN, OBSERVE, CREATE, PREFERENCES, PLAY, QUIT };
 
 	ui(game_display& d, const std::string& title,
-			const config& cfg, chat& c, config& gamelist);
-
+       const config& cfg, chat& c, config& gamelist, bool title_hidden = false);
 	/**
 	 * Asks the multiplayer_ui to pump some data from the network, and then to
 	 * process it. The actual processing will be left to the child classes,
@@ -207,6 +206,7 @@ private:
 	 */
 	bool initialized_;
 	bool gamelist_initialized_;
+	bool title_hidden_;
 
 	/** Ensures standard hotkeys are coorectly handled. */
 	const hotkey::basic_handler hotkey_handler_;

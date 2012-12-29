@@ -32,6 +32,10 @@
 #define LOG_CHILD_SCOPE_HEADER "tgrid::tchild [" \
 		+ (widget_ ? widget_->id() : "-") + "] " + __func__
 #define LOG_CHILD_HEADER LOG_CHILD_SCOPE_HEADER + ':'
+#ifdef __IPHONEOS__
+extern int IOS_SCREEN_WIDTH;
+extern int IOS_SCREEN_HEIGHT;
+#endif
 
 namespace gui2 {
 
@@ -443,7 +447,6 @@ void tgrid::place(const tpoint& origin, const tpoint& size)
 	log_scope2(log_gui_layout, LOG_SCOPE_HEADER);
 
 	/***** INIT *****/
-
 	twidget::place(origin, size);
 
 	if(!rows_ || !cols_) {
@@ -541,7 +544,19 @@ void tgrid::place(const tpoint& origin, const tpoint& size)
 		layout(origin);
 		return;
 	}
+#ifdef __IPHONEOS__
+    int new_origin_x = (IOS_SCREEN_WIDTH - best_size.x)/2;
+    int new_origin_y = (IOS_SCREEN_HEIGHT - best_size.y)/2;
+    if (new_origin_x < 0)
+        new_origin_x = 0;
+        
+    if (new_origin_y < 0)
+        new_origin_y = 0;
+    twidget::place(tpoint(0,0), best_size);
 
+    layout(tpoint(0,0));
+    return;
+#endif
 	// This shouldn't be possible...
 	assert(false);
 }

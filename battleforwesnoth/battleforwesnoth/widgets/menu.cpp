@@ -1,4 +1,4 @@
-/* $Id: menu.cpp 52533 2012-01-07 02:35:17Z shadowmaster $ */
+/* $Id: menu.cpp 55383 2012-09-23 20:15:17Z shadowmaster $ */
 /*
    Copyright (C) 2003 - 2012 by David White <dave@whitevine.net>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -345,7 +345,11 @@ void menu::update_size()
 	    i_end = std::min(items_.size(), i + max_items_onscreen());
 	    i < i_end; ++i)
 		h += get_item_rect(i).h;
+#ifndef __IPHONEOS__
 	h = std::max(h, height());
+#else
+    h = std::max(h, (unsigned int)height());
+#endif
 	if (max_height_ > 0 && h > static_cast<unsigned>(max_height_)) {
 		h = max_height_;
 	}
@@ -355,7 +359,11 @@ void menu::update_size()
 	unsigned w = std::accumulate(widths.begin(), widths.end(), 0);
 	if (items_.size() > max_items_onscreen())
 		w += scrollbar_width();
+#ifndef __IPHONEOS__
 	w = std::max(w, width());
+#else
+    w = std::max(w, (unsigned int)width());
+#endif
 	if (max_width_ > 0 && w > static_cast<unsigned>(max_width_)) {
 		use_ellipsis_ = true;
 		w = max_width_;
@@ -570,7 +578,7 @@ void menu::move_selection_keeping_viewport(size_t id)
 
 void menu::reset_selection()
 {
-	set_selection_pos(0);
+	set_selection_pos(0, true);
 }
 
 void menu::key_press(SDLKey key)

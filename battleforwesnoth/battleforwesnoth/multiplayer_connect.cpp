@@ -86,7 +86,11 @@ connect::side::side(connect& parent, const config& cfg, int index) :
 	team_lock_(cfg["team_lock"].to_bool()),
 	color_lock_(cfg["color_lock"].to_bool()),
 	player_number_(parent.video(), str_cast(index + 1), font::SIZE_LARGE, font::LOBBY_COLOR),
+#ifndef __IPHONEOS__
 	combo_controller_(new gui::combo_drag(parent.disp(), parent.player_types_, parent.combo_control_group_)),
+#else
+    combo_controller_(parent.disp(), std::vector<std::string>()),
+#endif
 	orig_controller_(parent.video(), current_player_, font::SIZE_SMALL),
 	combo_ai_algorithm_(parent.disp(), std::vector<std::string>()),
 	combo_faction_(parent.disp(), std::vector<std::string>()),
@@ -332,9 +336,16 @@ void connect::side::add_widgets_to_scrollpane(gui::scrollpane& pane, int pos)
 {
 #ifndef USE_TINY_GUI
 	pane.add_widget(&player_number_,     0, 5 + pos);
+#ifndef __IPHONEOS__
 	pane.add_widget(combo_controller_.get(), 20, 5 + pos);
-	pane.add_widget(&orig_controller_,  20 + (combo_controller_->width() - orig_controller_.width()) / 2,
-									    35 + pos + (combo_leader_.height() - orig_controller_.height()) / 2);
+    pane.add_widget(&orig_controller_,  20 + (combo_controller_->width() - orig_controller_.width()) / 2,
+                    35 + pos + (combo_leader_.height() - orig_controller_.height()) / 2);
+#else
+    pane.add_widget(&combo_controller_, 20, 5 + pos);
+    pane.add_widget(&orig_controller_,  20 + (combo_controller_.width() - orig_controller_.width()) / 2,
+                    35 + pos + (combo_leader_.height() - orig_controller_.height()) / 2);
+#endif
+
 	pane.add_widget(&combo_ai_algorithm_, 20, 35 + pos);
 	pane.add_widget(&combo_faction_, 135, 5 + pos);
 	pane.add_widget(&combo_leader_,  135, 35 + pos);
@@ -347,10 +358,19 @@ void connect::side::add_widgets_to_scrollpane(gui::scrollpane& pane, int pos)
 	pane.add_widget(&label_income_,  475 + slider_gold_.width(), 35 + pos);
 #else
     pane.add_widget(&player_number_,     0, 5 + pos);
+#ifndef __IPHONEOS__
 	pane.add_widget(combo_controller_.get(), 22, 5 + pos);
+#else
+    pane.add_widget(&combo_controller_, 22, 5 + pos);
+#endif
 	int curX = 22;
+#ifndef __IPHONEOS__
 	pane.add_widget(&orig_controller_,  22 + (combo_controller_->width() - orig_controller_.width()) / 2,
                     35 + pos + (combo_leader_.height() - orig_controller_.height()) / 2);
+#else
+    pane.add_widget(&orig_controller_,  22 + (combo_controller_.width() - orig_controller_.width()) / 2,
+                    35 + pos + (combo_leader_.height() - orig_controller_.height()) / 2);
+#endif
 	pane.add_widget(&combo_ai_algorithm_, 22, 35 + pos);
 	curX += 100;
 	pane.add_widget(&combo_faction_, curX, 5 + pos);
@@ -372,7 +392,11 @@ void connect::side::add_widgets_to_scrollpane(gui::scrollpane& pane, int pos)
 void connect::side::process_event()
 {
 	int drop_target;
+#ifndef __IPHONEOS__
 	if ( ( drop_target = combo_controller_->get_drop_target() )> -1)
+#else
+    if (false)
+#endif
 	{
 		const std::string target_id = parent_->sides_[drop_target].get_player_id();
 		const mp::controller target_controller = parent_->sides_[drop_target].get_controller();
@@ -400,6 +424,7 @@ void connect::side::process_event()
 		parent_->sides_[drop_target].init_ai_algorithm_combo();
 		parent_->sides_[drop_target].update_ui();
 	}
+#ifndef __IPHONEOS__
 	else if(combo_controller_->changed() && combo_controller_->selected() >= 0) {
 		const int cntr_last = (save_id_.empty() ? CNTR_LAST-1 : CNTR_LAST) - (parent_->local_only_ ? 1 : 0);
 		if (combo_controller_->selected() == cntr_last) {
@@ -427,6 +452,35 @@ void connect::side::process_event()
 
 	if (combo_controller_->hidden())
 		combo_controller_->hide(false);
+#else
+    else if(combo_controller_.changed() && combo_controller_.selected() >= 0) {
+		const int cntr_last = (save_id_.empty() ? CNTR_LAST-1 : CNTR_LAST) - (parent_->local_only_ ? 1 : 0);
+		if (combo_controller_.selected() == cntr_last) {
+			update_controller_ui();
+		} else if (combo_controller_.selected() < cntr_last) {
+			// Correct entry number if CNTR_NETWORK is not allowed for combo_controller_
+			controller_ = mp::controller(combo_controller_.selected() + (parent_->local_only_ ? 1 : 0));
+			player_id_ = "";
+			ready_for_start_ = false;
+			changed_ = true;
+		} else {
+			// give user second side
+			size_t user = combo_controller_.selected() - cntr_last - 1;
+            
+			const std::string new_id = parent_->users_[user].name;
+			if (new_id != player_id_) {
+				player_id_ = new_id;
+				controller_ = parent_->users_[user].controller;
+				ready_for_start_ = true;
+				changed_ = true;
+			}
+		}
+		update_ai_algorithm_combo();
+	}
+    
+	if (combo_controller_.hidden())
+		combo_controller_.hide(false);
+#endif
 	if(!enabled_)
 		return;
 
@@ -531,6 +585,7 @@ bool connect::side::allow_player() const
 
 void connect::side::update_controller_ui()
 {
+#ifndef __IPHONEOS__
 	if (player_id_.empty()) {
 		combo_controller_->set_selected(controller_ - (parent_->local_only_ ? 1 : 0));
 	} else {
@@ -544,6 +599,21 @@ void connect::side::update_controller_ui()
 			combo_controller_->set_selected(CNTR_NETWORK);
 		}
 	}
+#else
+    if (player_id_.empty()) {
+		combo_controller_.set_selected(controller_ - (parent_->local_only_ ? 1 : 0));
+	} else {
+		connected_user_list::iterator player = parent_->find_player(player_id_);
+        
+		if (player != parent_->users_.end()) {
+			const int no_reserve = save_id_.empty()?-1:0;
+			combo_controller_.set_selected(CNTR_LAST + no_reserve + 1 + (player - parent_->users_.begin()) - (parent_->local_only_ ? 1 : 0));
+		} else {
+			assert(parent_->local_only_ != true);
+			combo_controller_.set_selected(CNTR_NETWORK);
+		}
+	}
+#endif
 
     update_ai_algorithm_combo();
 }
@@ -817,7 +887,11 @@ void connect::side::update_user_list()
 		player_id_ = "";
 	}
 
+#ifndef __IPHONEOS__
 	combo_controller_->set_items(list);
+#else
+    combo_controller_.set_items(list);
+#endif
 	update_controller_ui();
 }
 

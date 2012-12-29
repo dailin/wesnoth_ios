@@ -162,6 +162,19 @@ protected:
 
 	/** Show context menu flag */
 	bool show_menu_;
+    
+#ifdef __IPHONEOS__
+    /** Amount already dragged/scrolled x */
+	int dragged_x_;
+	/** Amount already dragged/scrolled y */
+	int dragged_y_;
+	bool didDrag_;
+	unsigned long drag_start_time_;
+	int scroll_velocity_x_;
+	int scroll_velocity_y_;
+	float drag_last_xVelocity_, drag_last_yVelocity_;
+	map_location last_clicked_hex_;
+#endif
 };
 
 } // end namespace events

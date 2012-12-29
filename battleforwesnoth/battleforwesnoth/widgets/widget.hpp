@@ -33,8 +33,13 @@ public:
 	void set_height(unsigned h);
 	void set_measurements(unsigned w, unsigned h);
 
+#ifndef __IPHONEOS__
 	unsigned width() const;
 	unsigned height() const;
+#else
+   	int width() const;
+	int height() const;
+#endif
 
 	//focus() may gain the focus if the currently focused handler doesn't require this event
 	bool focus(const SDL_Event* event);

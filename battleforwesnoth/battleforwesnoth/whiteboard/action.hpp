@@ -1,4 +1,4 @@
-/* $Id: action.hpp 53971 2012-04-22 23:53:28Z gabba $ */
+/* $Id: action.hpp 55503 2012-10-06 21:46:53Z gabba $ */
 /*
  Copyright (C) 2010 - 2012 by Gabriel Morin <gabrielmorin (at) gmail (dot) com>
  Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -66,6 +66,13 @@ public:
 
 	/** Return the unit targeted by this action. Null if unit doesn't exist. */
 	virtual unit* get_unit() const = 0;
+
+	/**
+	 * Returns the id of the unit targeted by this action.
+	 * @retval 0 no unit is targeted.
+	 */
+	size_t get_unit_id() const;
+
 	/** @return pointer to the fake unit used only for visuals */
 	virtual fake_unit_ptr get_fake_unit() = 0;
 	/** Returns the index of the team that owns this action */

@@ -170,6 +170,8 @@ void loadscreen::draw_screen(const std::string &text)
 	sdl_fill_rect(gdis,&area,SDL_MapRGB(gdis->format,lcr,lcg,lcb));
 
 	// Clear the last text and draw new if text is provided.
+#ifndef __IPHONEOS__
+
 	if (!text.empty())
 	{
 		SDL_Rect oldarea = textarea_;
@@ -178,9 +180,11 @@ void loadscreen::draw_screen(const std::string &text)
 		textarea_.x = scrx/2 + bw + bispw - textarea_.w / 2;
 		textarea_.y = pby + pbh + 4*(bw + bispw);
 		textarea_ = font::draw_text(&screen_,textarea_,font::SIZE_NORMAL,font::NORMAL_COLOR,text,textarea_.x,textarea_.y);
+
 		SDL_Rect refresh = union_rects(oldarea, textarea_);
 		update_rect(refresh.x, refresh.y, refresh.w, refresh.h);
 	}
+#endif
 //	// Update the rectangle.
 	update_rect(pbx, pby, pbw + 2*(bw + bispw), pbh + 2*(bw + bispw));
 	screen_.flip();

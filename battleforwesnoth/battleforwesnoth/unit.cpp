@@ -1,4 +1,4 @@
-/* $Id: unit.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: unit.cpp 55524 2012-10-07 17:13:02Z boucman $ */
 /*
    Copyright (C) 2003 - 2012 by David White <dave@whitevine.net>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -50,6 +50,9 @@ static lg::log_domain log_engine("engine");
 static lg::log_domain log_config("config");
 #define WRN_CF LOG_STREAM(warn, log_config)
 #define ERR_CONFIG LOG_STREAM(err, log_config)
+#ifdef __IPHONEOS__
+extern bool gIsDragging;
+#endif
 
 namespace {
 	const std::string ModificationTypes[] = { "advance", "trait", "object" };
@@ -1792,12 +1795,12 @@ void unit::start_animation(int start_time, const unit_animation *animation,
 	bool with_bars,  const std::string &text, Uint32 text_color, STATE state)
 {
 	const game_display * disp =  game_display::get_singleton();
-	state_ = state;
 	if (!animation) {
-		if (state != STATE_STANDING)
+		if (!anim_ || state_ != STATE_STANDING)
 			set_standing(with_bars);
 		return ;
 	}
+	state_ = state;
 	// everything except standing select and idle
 	bool accelerate = (state != STATE_FORGET && state != STATE_STANDING);
 	draw_bars_ =  with_bars;
@@ -2082,6 +2085,8 @@ bool unit::invalidate(const map_location &loc)
 		params.y -= height_adjust;
 		params.halo_y -= height_adjust;
 		params.image_mod = image_mods();
+		params.halo_mod = TC_image_mods();
+		params.image= absolute_image();
 
 		result |= get_animation()->invalidate(params);
 	}
@@ -2948,7 +2953,11 @@ void unit::refresh()
 			next_idling_ = INT_MAX;
 		}
 	} else {
-		set_idling();
+#ifdef __IPHONEOS__
+        if (!gIsDragging)
+            set_idling();
+#endif
+
 	}
 }
 

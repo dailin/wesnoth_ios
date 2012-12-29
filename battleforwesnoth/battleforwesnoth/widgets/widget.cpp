@@ -129,6 +129,7 @@ void widget::set_measurements(unsigned w, unsigned h)
 	set_location(create_rect(rect_.x, rect_.y, w, h));
 }
 
+#ifndef __IPHONEOS__
 unsigned widget::width() const
 {
 	return rect_.w;
@@ -138,6 +139,17 @@ unsigned widget::height() const
 {
 	return rect_.h;
 }
+#else
+int widget::width() const
+{
+    return rect_.w;
+}
+    
+int widget::height() const
+{
+    return rect_.h;
+}
+#endif
 
 const SDL_Rect& widget::location() const
 {

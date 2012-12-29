@@ -73,9 +73,7 @@ void tlanguage_selection::pre_show(CVideo& /*video*/, twindow& window)
 		list.add_row(item);
 		if(lang == current_language) {
 			list.select_row(list.get_item_count() - 1);
-		}
-        break;
-        
+		}        
 	}
 }
 

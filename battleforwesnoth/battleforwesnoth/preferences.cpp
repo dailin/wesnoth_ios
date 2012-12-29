@@ -53,7 +53,7 @@ bool fps = false;
 #ifndef __IPHONEOS__
 int draw_delay_ = 20;
 #else
-int draw_delay_ = 33;
+int draw_delay_ = 20;
 #endif
 
 config prefs;
@@ -668,7 +668,11 @@ int mouse_scroll_threshold()
 
 bool animate_map()
 {
-	return preferences::get("animate_map", true);
+	return preferences::get("animate_map", true)
+#ifdef __IPHONEOS__
+    && false
+#endif
+    ;
 }
 
 void set_animate_map(bool value)

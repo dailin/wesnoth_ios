@@ -346,10 +346,10 @@ preferences_dialog::preferences_dialog(display& disp, const config& game_cfg)
 
 	standing_anim_button_.set_check(show_standing_animations());
 	standing_anim_button_.set_help_string(_("Continuously animate standing units in the battlefield"));
-
+#ifndef __IPHONEOS__
 	animate_map_button_.set_check(animate_map());
 	animate_map_button_.set_help_string(_("Display animated terrain graphics"));
-
+#endif
 	// exponential scale (2^(n/10))
 	idle_anim_slider_.set_min(-40);
 	idle_anim_slider_.set_max(30);
@@ -396,8 +396,9 @@ preferences_dialog::preferences_dialog(display& disp, const config& game_cfg)
 
 	new_lobby_button_.set_check(new_lobby());
 	new_lobby_button_.set_help_string(_("Use New Lobby Interface"));
-
+#ifndef __IPHONEOS__
 	mp_server_search_button_.set_help_string(_("Find and set path to MP server to host LAN games."));
+#endif
 	friends_list_button_.set_help_string(_("View and edit your friends and ignores list"));
 	friends_back_button_.set_help_string(_("Back to the multiplayer options"));
 	friends_add_friend_button_.set_help_string(_("Add this username to your friends list"));
@@ -460,7 +461,9 @@ handler_vector preferences_dialog::handler_members()
 	h.push_back(&turbo_button_);
 	h.push_back(&idle_anim_button_);
 	h.push_back(&standing_anim_button_);
+#ifndef __IPHONEOS__
 	h.push_back(&animate_map_button_);
+#endif
 	h.push_back(&show_ai_moves_button_);
 	h.push_back(&interrupt_when_ally_sighted_button_);
 //	h.push_back(&save_replays_button_);
@@ -475,7 +478,9 @@ handler_vector preferences_dialog::handler_members()
 	h.push_back(&show_lobby_joins_button2_);
 	h.push_back(&show_lobby_joins_button3_);
 	h.push_back(&new_lobby_button_);
+#ifndef __IPHONEOS__
 	h.push_back(&mp_server_search_button_);
+#endif
 	h.push_back(&friends_list_button_);
 	h.push_back(&friends_back_button_);
 	h.push_back(&friends_add_friend_button_);
@@ -599,8 +604,12 @@ void preferences_dialog::update_location(SDL_Rect const &rect)
 	ypos += item_interline; show_team_colors_button_.set_location(rect.x, ypos);
 	ypos += item_interline; show_grid_button_.set_location(rect.x, ypos);
 
-	ypos += item_interline; animate_map_button_.set_location(rect.x, ypos);
-	ypos += short_interline; standing_anim_button_.set_location(rect.x, ypos);
+	ypos += item_interline;
+#ifndef __IPHONEOS__
+    animate_map_button_.set_location(rect.x, ypos);
+	ypos += short_interline;
+#endif
+    standing_anim_button_.set_location(rect.x, ypos);
 	ypos += short_interline; idle_anim_button_.set_location(rect.x, ypos);
 	ypos += short_interline;
 	idle_anim_slider_label_.set_location(rect.x + horizontal_padding, ypos);
@@ -712,9 +721,9 @@ void preferences_dialog::update_location(SDL_Rect const &rect)
 	ypos += item_interline; new_lobby_button_.set_location(rect.x, ypos);
 
 	friends_list_button_.set_location(rect.x, bottom_row_y - friends_list_button_.height());
-
+#ifndef __IPHONEOS__
 	mp_server_search_button_.set_location(rect.x + 10 + friends_list_button_.width(), bottom_row_y - mp_server_search_button_.height());
-
+#endif
 	//Friends tab
 	ypos = rect.y + top_border;
 	friends_input_.set_location(rect.x,ypos);
@@ -822,8 +831,10 @@ void preferences_dialog::process_event()
 			set_show_side_colors(show_team_colors_button_.checked());
 		if (show_grid_button_.pressed())
 			set_grid(show_grid_button_.checked());
+#ifndef __IPHONEOS__
 		if (animate_map_button_.pressed())
 			set_animate_map(animate_map_button_.checked());
+#endif
 		if (idle_anim_button_.pressed()) {
 			const bool enable_idle_anim = idle_anim_button_.checked();
 			idle_anim_slider_label_.enable(enable_idle_anim);
@@ -966,7 +977,7 @@ void preferences_dialog::process_event()
 			set_chat_timestamping(chat_timestamp_button_.checked());
 		if (friends_list_button_.pressed())
 			set_selection(FRIENDS_TAB);
-
+#ifndef __IPHONEOS__
 		if (mp_server_search_button_.pressed())
 		{
 			std::string path = show_wesnothd_server_search(disp_);
@@ -976,7 +987,7 @@ void preferences_dialog::process_event()
 			}
 			parent->clear_buttons();
 		}
-
+#endif
 		set_chat_lines(chat_lines_slider_.value());
 
 		//display currently select amount of chat lines
@@ -1209,8 +1220,8 @@ void preferences_dialog::set_selection(int index)
 	idle_anim_slider_.hide(hide_display);
 	idle_anim_slider_.enable(idle_anim());
 	standing_anim_button_.hide(hide_display);
-	animate_map_button_.hide(hide_display);
 #ifndef __IPHONEOS__
+	animate_map_button_.hide(hide_display);
 	video_mode_button_.hide(hide_display);
 	theme_button_.hide(hide_display);
 #endif
@@ -1265,8 +1276,9 @@ void preferences_dialog::set_selection(int index)
 	show_lobby_joins_button3_.hide(hide_multiplayer);
 	new_lobby_button_.hide(hide_multiplayer);
 	friends_list_button_.hide(hide_multiplayer);
+#ifndef __IPHONEOS__
 	mp_server_search_button_.hide(hide_multiplayer);
-
+#endif
 	const bool hide_friends = tab_ != FRIENDS_TAB;
 	friends_.hide(hide_friends);
 	friends_back_button_.hide(hide_friends);

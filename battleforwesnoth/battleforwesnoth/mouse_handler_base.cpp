@@ -24,7 +24,9 @@
 
 static lg::log_domain log_display("display");
 #define WRN_DP LOG_STREAM(warn, log_display)
-
+#ifdef __IPHONEOS__
+extern bool gIsDragging;
+#endif
 namespace events {
 
 command_disabler::command_disabler()
@@ -58,7 +60,8 @@ mouse_handler_base::mouse_handler_base() :
 	drag_from_y_(0),
 	drag_from_hex_(),
 	last_hex_(),
-	show_menu_(false)
+	show_menu_(false),
+    didDrag_(false)
 {
 }
 
@@ -118,11 +121,47 @@ bool mouse_handler_base::mouse_motion_default(int x, int y, bool /*update*/)
 					+ std::pow(static_cast<double>(drag_from_y_- my), 2);
 			if (drag_distance > drag_threshold()*drag_threshold()) {
 				dragging_started_ = true;
-            
+#ifdef __IPHONEOS__
+				dragged_x_ = 0;
+				dragged_y_ = 0;
+#endif
 				cursor::set_dragging(true);
 			}
 		}
 	}
+#ifdef __IPHONEOS__
+	if (is_dragging() && dragging_started_ && dragging_left_)
+	{
+		SDL_GetMouseState(&mx,&my);
+		int dx = drag_from_x_ - mx;
+		int dy = drag_from_y_ - my;
+		int scrollChangeX = -dragged_x_ + dx;
+		int scrollChangeY = -dragged_y_ + dy;
+		gui().scroll(scrollChangeX, scrollChangeY);
+		dragged_x_ = dx;
+		dragged_y_ = dy;
+		didDrag_ = true;
+		gIsDragging = true;
+		// KP: fixes #5
+		unsigned long curTime = SDL_GetTicks();
+		if ((curTime - drag_start_time_) > 100) // update velocity every 1/10 second
+		{
+			float seconds = (float)(curTime - drag_start_time_) / 1000;
+			float xVelocity = (float)-dragged_x_ / seconds;
+			float yVelocity = (float)-dragged_y_ / seconds;
+			
+			drag_last_xVelocity_ = xVelocity;
+			drag_last_yVelocity_ = yVelocity;
+			
+			drag_start_time_ = curTime;
+			drag_from_x_ = mx;
+			drag_from_y_ = my;
+			dragged_x_ = 0;
+			dragged_y_ = 0;
+		}
+		//return true;
+	}
+#endif
 	return false;
 }
 
@@ -253,6 +292,29 @@ bool mouse_handler_base::left_click(int x, int y, const bool /*browse*/)
 
 void mouse_handler_base::left_drag_end(int x, int y, const bool browse)
 {
+#ifdef __IPHONEOS__
+    unsigned long endTime = SDL_GetTicks();
+	float seconds = (float)(endTime - drag_start_time_) / 1000;
+	float xVelocity, yVelocity;
+    bool flag;
+	if (seconds < 0.25)
+	{
+		xVelocity = drag_last_xVelocity_;
+		yVelocity = drag_last_yVelocity_;
+        flag = true;
+        gIsDragging = true;
+	}
+	else
+	{
+		//xVelocity = (float)-dragged_x_ / seconds;
+		//yVelocity = (float)-dragged_y_ / seconds;
+		xVelocity = 0;
+		yVelocity = 0;
+        flag = false;
+        gIsDragging = false;
+	}
+	gui().set_scroll_velocity(xVelocity, yVelocity,flag);
+#endif
 	left_click(x, y, browse);
 }
 
@@ -290,6 +352,12 @@ void mouse_handler_base::init_dragging(bool& dragging_flag)
 	dragging_flag = true;
 	SDL_GetMouseState(&drag_from_x_, &drag_from_y_);
 	drag_from_hex_ = gui().hex_clicked_on(drag_from_x_, drag_from_y_);
+#ifdef __IPHONES__
+    drag_last_xVelocity_ = 0;
+	drag_last_yVelocity_ = 0;
+	drag_start_time_ = SDL_GetTicks();
+#endif
+
 }
 
 void mouse_handler_base::cancel_dragging()
@@ -297,6 +365,10 @@ void mouse_handler_base::cancel_dragging()
 	dragging_started_ = false;
 	dragging_left_ = false;
 	dragging_right_ = false;
+#ifdef __IPHONEOS__
+    gIsDragging = false;
+    gui().set_scroll_velocity(0, 0, false);
+#endif
 	cursor::set_dragging(false);
 }
 

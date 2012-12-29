@@ -98,6 +98,7 @@ protected:
 	void mouse_motion(int x, int y, const bool browse, bool update=false, map_location loc = map_location::null_location);
 	bool right_click_show_menu(int x, int y, const bool browse);
 	bool left_click(int x, int y, const bool browse);
+    void left_mouse_up(int x, int y, const bool browse);
 	bool move_unit_along_current_route(bool check_shroud);
 
 	void save_whiteboard_attack(const map_location& attacker_loc, const map_location& defender_loc, int weapon_choice);

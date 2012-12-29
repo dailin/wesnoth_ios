@@ -176,7 +176,11 @@ public:
 
 		// Widgets for this side
 		gui::label player_number_;
+#ifndef __IPHONEOS__
 		gui::combo_drag_ptr combo_controller_;
+#else
+        gui::combo combo_controller_;
+#endif
 		gui::label orig_controller_;
 		gui::combo combo_ai_algorithm_;
 		gui::combo combo_faction_;

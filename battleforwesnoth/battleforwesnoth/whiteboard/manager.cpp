@@ -1,4 +1,4 @@
-/* $Id: manager.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: manager.cpp 55706 2012-11-16 22:54:08Z jamit $ */
 /*
  Copyright (C) 2010 - 2012 by Gabriel Morin <gabrielmorin (at) gmail (dot) com>
  Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -459,37 +459,39 @@ namespace
 {
 	//Helper struct that finds all units teams whose planned actions are currently visible
 	//Only used by manager::pre_draw() and post_draw()
-	struct move_owners_finder
-		: private enable_visit_all<move_owners_finder>, public visitor
+	struct move_owners_finder: public visitor
 	{
-		friend class enable_visit_all<move_owners_finder>;
 
 	public:
-		move_owners_finder()
-			: move_owners_()
-		{
-			//Thanks to the default pre_visit_team, will only visit visible side_actions
-			visit_all_actions();
+		move_owners_finder(): move_owners_() { }
+
+		void operator()(action_ptr action) {
+			action->accept(*this);
 		}
 
 		std::set<size_t> const& get_units_owning_moves() {
 			return move_owners_;
 		}
 
-	private:
 		virtual void visit(move_ptr move) {
-			move_owners_.insert(move->get_unit()->underlying_id());
+			if(size_t id = move->get_unit_id()) {
+				move_owners_.insert(id);
 		}
+		}
+
 		virtual void visit(attack_ptr attack) {
 			//also add attacks if they have an associated move
-			if (boost::static_pointer_cast<move>(attack)->get_route().steps.size() >= 2) {
-				move_owners_.insert(attack->get_unit()->underlying_id());
+			if(attack->get_route().steps.size() >= 2) {
+				if(size_t id = attack->get_unit_id()) {
+					move_owners_.insert(id);
+				}
 			}
 		}
 		virtual void visit(recruit_ptr){}
 		virtual void visit(recall_ptr){}
 		virtual void visit(suppose_dead_ptr){}
 
+	private:
 		std::set<size_t> move_owners_;
 	};
 }
@@ -966,11 +968,15 @@ bool manager::allow_end_turn()
 
 bool manager::execute_all_actions()
 {
+	//exception-safety: finalizers set variables to false on destruction
+	//i.e. when method exits naturally or exception is thrown
+	variable_finalizer<bool> finalize_executing_actions(executing_actions_, false);
+	variable_finalizer<bool> finalize_executing_all_actions(executing_all_actions_, false);
+
 	validate_viewer_actions();
 	if(viewer_actions()->empty() || viewer_actions()->turn_size(0) == 0)
 	{
 		//No actions to execute, job done.
-		executing_all_actions_ = false;
 		return true;
 	}
 
@@ -983,8 +989,6 @@ bool manager::execute_all_actions()
 	assert(has_planned_unit_map());
 	set_real_unit_map();
 
-	//exception-safety: Finalizer sets executing_actions to false on destruction
-	variable_finalizer<bool> finally(executing_actions_, false);
 	executing_actions_ = true;
 	executing_all_actions_ = true;
 
@@ -999,31 +1003,23 @@ bool manager::execute_all_actions()
 
 	while (sa->turn_begin(0) != sa->turn_end(0))
 	{
-		bool action_successful;
-		try {
-			action_successful = sa->execute(sa->begin());
-		} catch (end_level_exception&) { //satisfy the gods of WML
-			executing_all_actions_ = false;
-			throw;
-		} catch (end_turn_exception&) { //satisfy the gods of WML
-			executing_all_actions_ = false;
-			throw;
-		}
+		bool action_successful = sa->execute(sa->begin());
+
 		// Interrupt if an attack is waiting for a random seed from the server
 		if ( rand_rng::has_new_seed_callback())
 		{
 			//leave executing_all_actions_ to true, we'll resume once attack completes
+			finalize_executing_all_actions.clear();
+
 			events::commands_disabled++; //to be decremented by continue_execute_all()
 			return false;
 		}
 		// Interrupt on incomplete action
 		if (!action_successful)
 		{
-			executing_all_actions_ = false;
 			return false;
 		}
 	}
-	executing_all_actions_ = false;
 	return true;
 }
 
@@ -1031,7 +1027,7 @@ void manager::continue_execute_all()
 {
 	if (executing_all_actions_ && !rand_rng::has_new_seed_callback()) {
 		events::commands_disabled--;
-		if (execute_all_actions()) {
+		if (execute_all_actions() && preparing_to_end_turn_) {
 			resources::controller->force_end_turn();
 		}
 	}
@@ -1100,13 +1096,13 @@ void manager::contextual_bump_down_action()
 
 bool manager::has_actions() const
 {
-	assert(!wait_for_side_init_);
+	assert(resources::teams);
 	return wb::has_actions();
 }
 
 bool manager::unit_has_actions(unit const* unit) const
 {
-	assert(!wait_for_side_init_);
+	assert(resources::teams);
 	return viewer_actions()->unit_has_actions(unit);
 }
 

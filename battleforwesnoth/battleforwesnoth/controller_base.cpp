@@ -149,9 +149,13 @@ void controller_base::post_mouse_press(const SDL_Event& /*event*/) {
 
 bool controller_base::handle_scroll(CKey& key, int mousex, int mousey, int mouse_flags, double x_axis, double y_axis)
 {
-	bool mouse_in_window = (SDL_GetAppState() & SDL_APPMOUSEFOCUS) != 0
-		|| preferences::get("scroll_when_mouse_outside", true);
-    mouse_in_window = ((SDL_GetMouseState(NULL,NULL) & (SDL_BUTTON(1) | SDL_BUTTON(2))) != 0); //dailin
+	bool mouse_in_window =
+#ifndef __IPHONEOS__
+    (SDL_GetAppState() & SDL_APPMOUSEFOCUS) != 0
+		|| preferences::get("scroll_when_mouse_outside", true)
+#else
+    false;
+#endif
 	bool keyboard_focus = have_keyboard_focus();
 	int scroll_speed = preferences::scroll_speed();
 	int dx = 0, dy = 0;
@@ -163,7 +167,6 @@ bool controller_base::handle_scroll(CKey& key, int mousex, int mousey, int mouse
 		}
 	}
 
-#ifndef __IPHONEOS__
 	if ((key[SDLK_UP] && keyboard_focus) ||
 	    (mousey < scroll_threshold && mouse_in_window))
 	{
@@ -184,28 +187,7 @@ bool controller_base::handle_scroll(CKey& key, int mousex, int mousey, int mouse
 	{
 		dx += scroll_speed;
 	}
-#else
-    if ((key[SDLK_UP] && keyboard_focus) ||
-	    (mousey < 3*scroll_threshold && mouse_in_window))
-	{
-		dy -= scroll_speed;
-	}
-	if ((key[SDLK_DOWN] && keyboard_focus) ||
-	    (mousey > get_display().h() - 3*scroll_threshold && mouse_in_window))
-	{
-		dy += scroll_speed;
-	}
-	if ((key[SDLK_LEFT] && keyboard_focus) ||
-	    (mousex < 3*scroll_threshold && mouse_in_window))
-	{
-		dx -= scroll_speed;
-	}
-	if ((key[SDLK_RIGHT] && keyboard_focus) ||
-	    (mousex > get_display().w() - 3*scroll_threshold && mouse_in_window))
-	{
-		dx += scroll_speed;
-	}
-#endif
+
 	if ((mouse_flags & SDL_BUTTON_MMASK) != 0 && preferences::middle_click_scrolls()) {
 		const SDL_Rect& rect = get_display().map_outside_area();
 		if (point_in_rect(mousex, mousey,rect)) {

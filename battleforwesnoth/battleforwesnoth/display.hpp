@@ -402,7 +402,9 @@ public:
 	 * @return true if the map actually moved.
 	 */
 	bool scroll(int xmov, int ymov);
-
+#ifdef __IPHONEOS__
+	void set_scroll_velocity(float xVelocity, float yVelocity, bool flag);
+#endif
 	/**
 	 * Zooms the display by the specified amount.
 	 * Negative values zoom out.
@@ -580,6 +582,13 @@ protected:
 	int xpos_, ypos_;
 	theme theme_;
 	int zoom_;
+#ifdef __IPHONEOS__
+    float xposf_, yposf_;			// duplicated positions, but with fractions for accuracy during scrolling
+	float scroll_velocity_x_;		// pixels/second
+	float scroll_velocity_y_;
+	unsigned long scroll_velocity_last_update_;
+    bool start_scroll_;
+#endif
 	static int last_zoom_;
 	boost::scoped_ptr<terrain_builder> builder_;
 	surface minimap_;

@@ -1,4 +1,4 @@
-/* $Id: multiplayer_ui.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: multiplayer_ui.cpp 55572 2012-10-21 20:19:52Z lipk $ */
 /*
    Copyright (C) 2005 - 2012
    Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -271,11 +271,11 @@ SDL_Color chat::color_message(const msg& message) {
 	return c;
 }
 
-ui::ui(game_display& disp, const std::string& title, const config& cfg, chat& c, config& gamelist) :
-	gui::widget(disp.video()),
+ui::ui(game_display& disp, const std::string& title, const config& cfg, chat& c, config& gamelist, bool title_hidden) :	gui::widget(disp.video()),
 	disp_(disp),
 	initialized_(false),
 	gamelist_initialized_(false),
+	title_hidden_(title_hidden),
 
 	hotkey_handler_(&disp),
 	disp_manager_(&disp),
@@ -659,7 +659,13 @@ void ui::hide_children(bool hide)
 
 void ui::layout_children(const SDL_Rect& /*rect*/)
 {
-	title_.set_location(xscale(12) + 8, yscale(38) + 8);
+#ifndef __IPHONEOS__
+    if (!title_hidden_) {
+		title_.set_location(xscale(12) + 8, yscale(38) + 8);
+	}
+#else
+    title_.set_location(xscale(12) + 8, yscale(38) + 8);
+#endif
 	umenu_style.set_width(xscale(159));
 	users_menu_.set_width(xscale(159));
 	users_menu_.set_max_width(xscale(159));

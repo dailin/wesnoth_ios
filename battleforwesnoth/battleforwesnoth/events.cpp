@@ -336,6 +336,7 @@ void pump()
 				//mouse moves or if the user clicks
 				cursor::set_focus(true);
 				if(event.button.button == SDL_BUTTON_LEFT) {
+#ifndef __IPHONEOS__
 					static const int DoubleClickTime = 500;
 					static const int DoubleClickMaxMove = 3;
 					if(last_mouse_down >= 0 && info.ticks() - last_mouse_down < DoubleClickTime &&
@@ -347,7 +348,9 @@ void pump()
 						user_event.data1 = reinterpret_cast<void*>(event.button.x);
 						user_event.data2 = reinterpret_cast<void*>(event.button.y);
 						::SDL_PushEvent(reinterpret_cast<SDL_Event*>(&user_event));
+
 					}
+#endif
 					last_mouse_down = info.ticks();
 					last_click_x = event.button.x;
 					last_click_y = event.button.y;

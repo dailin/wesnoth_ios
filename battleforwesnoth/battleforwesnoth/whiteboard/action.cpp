@@ -1,4 +1,4 @@
-/* $Id: action.cpp 52533 2012-01-07 02:35:17Z shadowmaster $ */
+/* $Id: action.cpp 55503 2012-10-06 21:46:53Z gabba $ */
 /*
  Copyright (C) 2010 - 2012 by Gabriel Morin <gabrielmorin (at) gmail (dot) com>
  Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -26,6 +26,7 @@
 
 #include "resources.hpp"
 #include "team.hpp"
+#include "unit.hpp"
 
 namespace wb {
 
@@ -111,6 +112,12 @@ action::action(config const& cfg, bool hidden)
 
 action::~action()
 {
+}
+
+size_t action::get_unit_id() const
+{
+	unit *ret = get_unit();
+	return ret ? ret->underlying_id() : 0;
 }
 
 } // end namespace wb

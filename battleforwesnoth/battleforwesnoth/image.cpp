@@ -1,4 +1,4 @@
-/* $Id: image.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: image.cpp 55642 2012-11-03 15:22:21Z mordante $ */
 /*
    Copyright (C) 2003 - 2012 by David White <dave@whitevine.net>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -349,7 +349,11 @@ size_t hash_value(const locator::value& val) {
 	using boost::hash_value;
 	using boost::hash_combine;
 
-	size_t hash = hash_value(val.type_);
+	/*
+	 * Boost 1.51.0 seems not longer accept an enumerate value in its hash
+	 * function so cast it to a type it does like.
+	 */
+	size_t hash = hash_value(static_cast<unsigned>(val.type_));
 	if (val.type_ == locator::FILE || val.type_ == locator::SUB_FILE) {
 		hash_combine(hash, val.filename_);
 	}
@@ -634,9 +638,7 @@ void set_pixel_format(SDL_PixelFormat* format)
 		f.Rmask != l.Rmask || f.Gmask != l.Gmask || f.Bmask != l.Bmask ||
 		f.Rloss != l.Rloss || f.Gloss != l.Gloss || f.Bloss != l.Bloss ||
 		f.Rshift != l.Rshift || f.Gshift != l.Gshift || f.Bshift != l.Bshift ||
-		//f.colorkey != l.colorkey || f.alpha != l.alpha
-		f.Amask != l.Amask || f.Aloss != l.Aloss || f.Ashift != l.Ashift
-		)
+		f.Amask != l.Amask || f.Aloss != l.Aloss || f.Ashift != l.Ashift)
 	{
 		LOG_DP << "detected a new display format\n";
 		flush_cache();

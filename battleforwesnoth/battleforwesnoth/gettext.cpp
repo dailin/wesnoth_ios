@@ -18,7 +18,7 @@
 #include "gettext.hpp"
 
 #include <cstring>
-
+#include <stdio.h>
 char const *egettext(char const *msgid)
 {
 	return msgid[0] == '\0' ? msgid : gettext(msgid);
@@ -34,6 +34,7 @@ const char* sgettext (const char *msgid)
 		else
 			msgval++;
 	}
+
 	return msgval;
 }
 
@@ -48,6 +49,7 @@ const char* dsgettext (const char * domainname, const char *msgid)
 		else
 			msgval++;
 	}
+    
 	return msgval;
 }
 

@@ -1,4 +1,4 @@
-/* $Id: multiplayer_create.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: multiplayer_create.cpp 55572 2012-10-21 20:19:52Z lipk $ */
 /*
  Copyright (C) 2007 - 2012
  Part of the Battle for Wesnoth Project http://www.wesnoth.org
@@ -54,7 +54,7 @@ namespace {
 namespace mp {
     
     create::create(game_display& disp, const config &cfg, chat& c, config& gamelist) :
-	ui(disp, _("Create Game"), cfg, c, gamelist),
+	ui(disp, _("Create Game"), cfg, c, gamelist, preferences::resolution().second <= 600),
     
 	tooltip_manager_(disp.video()),
 	map_selection_(-1),
@@ -702,33 +702,38 @@ namespace mp {
         DBG_MP << "laying out the children" << std::endl;
         
         ui::layout_children(rect);
+        
+        std::pair<int,int> resolution = preferences::resolution();
+        const bool low_hres = resolution.first <= 840;
+        const bool low_vres = resolution.second <= 600;
+        
+        const int border_size = low_vres ? 4 : 6;
+        const int column_border_size = low_hres ? 8 : 10;
+        
         SDL_Rect ca = client_area();
-        
-        const int border_size = 6;
-        const int column_border_size = 10;
-        
         int xpos = ca.x;
         int ypos = ca.y;
         
+        const int minimap_width = !low_vres ? 200 : 100;
+        const int maps_menu_width = !low_hres ? 200 : 175;
+        
         // Dialog title
-        ypos += title().height() + border_size;
+        ypos += low_vres ? 0 : title().height() + border_size;
         
         // Name Entry
         name_entry_label_.set_location(xpos, ypos);
         name_entry_.set_location(xpos + name_entry_label_.width() + border_size, ypos);
-        name_entry_.set_width(ca.w - name_entry_label_.width() - border_size);
+        if (low_vres) {
+            name_entry_.set_width(minimap_width + maps_menu_width + border_size - name_entry_label_.width());
+        } else {
+            name_entry_.set_width(ca.w - name_entry_label_.width() - border_size);
+        }
         ypos += std::max<int>(name_entry_.height(), name_entry_label_.height()) + border_size;
         
         // Save ypos here (column top)
         int ypos_columntop = ypos;
         
         // First column: minimap & random map options
-        std::pair<int,int> resolution = preferences::resolution();
-        
-        const int resolution_for_small_minimap = 880;
-        
-        const int minimap_width = resolution.first > resolution_for_small_minimap ? 200 : 130;
-        
         minimap_rect_ = create_rect(xpos, ypos, minimap_width, minimap_width);
         ypos += minimap_width + border_size;
         
@@ -761,7 +766,7 @@ namespace mp {
         map_label_.set_location(xpos, ypos);
         ypos += map_label_.height() + border_size;
         
-        maps_menu_.set_max_width(200);
+        maps_menu_.set_max_width(maps_menu_width);
         maps_menu_.set_max_height(ca.h + ca.y - ypos);
         maps_menu_.set_location(xpos, ypos);
         // Menu dimensions are only updated when items are set. So do this now.
@@ -770,38 +775,48 @@ namespace mp {
         maps_menu_.move_selection(mapsel_save);
         
         // Third column: big bunch of options
-        ypos = ypos_columntop;
-        xpos += 200 + column_border_size;
+        const bool two_sliders_per_row = low_vres;
         
-        turns_label_.set_location(xpos, ypos);
-        ypos += turns_label_.height() + border_size;
-        turns_slider_.set_width(ca.w - xpos);
-        turns_slider_.set_location(xpos, ypos);
-        ypos += turns_slider_.height() + border_size;
+        ypos = ypos_columntop - (low_vres ? name_entry_.height() + border_size : 0);
+        xpos += maps_menu_width + column_border_size;
         
-        village_gold_label_.set_location(xpos, ypos);
-        ypos += village_gold_label_.height() + border_size;
-        village_gold_slider_.set_width(ca.w - xpos);
-        village_gold_slider_.set_location(xpos, ypos);
-        ypos += village_gold_slider_.height() + border_size;
-        
-        xp_modifier_label_.set_location(xpos, ypos);
-        ypos += xp_modifier_label_.height() + border_size;
-        xp_modifier_slider_.set_width(ca.w - xpos);
-        xp_modifier_slider_.set_location(xpos, ypos);
-        ypos += xp_modifier_slider_.height() + border_size;
+        int slider_width = two_sliders_per_row ? (ca.w - xpos)/2 : ca.w -xpos;
         
         use_map_settings_.set_location(xpos, ypos);
         fog_game_.set_location(xpos + (ca.w - xpos)/2 + 5, ypos);
         ypos += use_map_settings_.height() + border_size;
         
-        observers_game_.set_location(xpos, ypos);
+        random_start_time_.set_location(xpos, ypos);
         shroud_game_.set_location(xpos + (ca.w - xpos)/2 + 5, ypos);
-        ypos += observers_game_.height() + border_size;
+        ypos += random_start_time_.height() + border_size;
         
-        shuffle_sides_.set_location(xpos, ypos);
-        random_start_time_.set_location(xpos + (ca.w - xpos)/2 + 5, ypos);
-        ypos += shuffle_sides_.height() + border_size;
+        turns_label_.set_location(xpos, ypos);
+        ypos += turns_label_.height() + border_size;
+        turns_slider_.set_width(slider_width);
+        turns_slider_.set_location(xpos, ypos);
+        
+        if (two_sliders_per_row) {
+            ypos -= turns_label_.height() + border_size;
+            xpos += turns_slider_.width() + border_size;
+        } else {
+            ypos += turns_slider_.height() + border_size;
+        }
+        
+        xp_modifier_label_.set_location(xpos, ypos);
+        ypos += xp_modifier_label_.height() + border_size;
+        xp_modifier_slider_.set_width(slider_width);
+        xp_modifier_slider_.set_location(xpos, ypos);
+        ypos += xp_modifier_slider_.height() + border_size;
+        
+        if (two_sliders_per_row) {
+            xpos -= xp_modifier_slider_.width() + border_size;
+        }
+        
+        village_gold_label_.set_location(xpos, ypos);
+        ypos += village_gold_label_.height() + border_size;
+        village_gold_slider_.set_width(slider_width);
+        village_gold_slider_.set_location(xpos, ypos);
+        ypos += village_gold_slider_.height() + border_size*2;
         
         countdown_game_.set_location(xpos, ypos);
         ypos += countdown_game_.height() + border_size;
@@ -822,7 +837,12 @@ namespace mp {
         countdown_action_bonus_slider_.set_width(((ca.w - xpos)/2)-5);
         countdown_reservoir_time_slider_.set_location(xpos, ypos);
         countdown_action_bonus_slider_.set_location(xpos + (ca.w - xpos)/2 + 5, ypos);
-        ypos += countdown_reservoir_time_slider_.height() + border_size;
+        ypos += countdown_reservoir_time_slider_.height() + border_size*2;
+        
+        shuffle_sides_.set_location(xpos, ypos);
+        observers_game_.set_location(xpos + (ca.w - xpos)/2 + 5, ypos);
+        ypos += shuffle_sides_.height() + border_size;
+        
         
         // OK / Cancel buttons
         gui::button* left_button = &launch_game_;
@@ -893,15 +913,12 @@ namespace mp {
         
         era_label_.set_location(xpos, ypos);
         era_combo_.set_location(xpos + era_label_.width() + border_size, ypos);
+        password_button_.set_location(xpos + 110, ypos);
         ypos += era_combo_.height() + border_size;
-        
-        use_map_settings_.set_location(xpos, ypos);
-        ypos += use_map_settings_.height() + border_size;
-        
+                
         regenerate_map_.set_location(xpos, ypos);
         regenerate_map_.hide(true);
-        ypos += regenerate_map_.height() + border_size;
-        generator_settings_.set_location(xpos, ypos);
+        generator_settings_.set_location(xpos+ 85, ypos);
         ypos += generator_settings_.height() + border_size;
         
         
@@ -971,6 +988,9 @@ namespace mp {
         
         observers_game_.set_location(xpos, ypos);
         ypos += observers_game_.height() + border_size;
+        
+        use_map_settings_.set_location(xpos, ypos);
+        ypos += use_map_settings_.height() + border_size;
         
         countdown_turn_bonus_label_.set_location(xpos, ypos);
         ypos += countdown_turn_bonus_label_.height() + border_size;

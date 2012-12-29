@@ -1,4 +1,4 @@
-/* $Id: team.cpp 54625 2012-07-08 14:26:21Z loonycyborg $ */
+/* $Id: team.cpp 55477 2012-10-03 17:03:01Z lipk $ */
 /*
    Copyright (C) 2003 - 2012 by David White <dave@whitevine.net>
    Part of the Battle for Wesnoth Project http://www.wesnoth.org/
@@ -607,7 +607,7 @@ bool is_observer()
 	}
 
 	BOOST_FOREACH(const team &t, *teams) {
-		if (t.is_human())
+		if (t.is_human() || t.is_human_ai())
 			return false;
 	}
 

@@ -14,6 +14,7 @@
 */
 
 #include "game_controller.hpp"
+#include <boost/foreach.hpp>
 
 #include "about.hpp"
 #include "addon/manager.hpp"
@@ -1081,9 +1082,33 @@ bool game_controller::play_multiplayer()
 
 bool game_controller::change_language()
 {
+#ifndef USE_TINY_GUI
 	gui2::tlanguage_selection dlg;
 	dlg.show(disp().video());
 	if (dlg.get_retval() != gui2::twindow::OK) return false;
+#else
+    gui::dialog cmenu(disp(), _("Change Language"), " ", gui::OK_CANCEL);
+    std::vector<std::string> campaign_names;
+    
+    const std::vector<language_def>& languages = get_languages();
+    BOOST_FOREACH(const language_def& lang, languages) {
+        campaign_names.push_back(lang.language);
+        
+	}
+    
+    cmenu.set_menu(campaign_names);
+    
+    if(cmenu.show() == -1) {
+        return false;
+    }
+    
+    ::set_language(languages[cmenu.result()]);
+    preferences::set_language(languages[cmenu.result()].localename);
+#endif
+#ifdef __IPHONEOS__
+    preferences::write_preferences();
+#endif
+    
 
 	if (!cmdline_opts_.nogui) {
 		std::string wm_title_string = _("The Battle for Wesnoth");

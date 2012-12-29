@@ -1257,7 +1257,11 @@ void command_executor::show_menu(const std::vector<std::string>& items_arg, int 
 		{
 			gui::dialog mmenu = gui::dialog(gui,"","",
 			gui::MESSAGE, gui::dialog::hotkeys_style);
+#ifdef USE_TINY_GUI
+            mmenu.set_menu_bigger(menu);
+#else
 			mmenu.set_menu(menu);
+#endif
 			res = mmenu.show(xloc, yloc);
 		} // this will kill the dialog
 		if (res < 0 || size_t(res) >= items.size())
