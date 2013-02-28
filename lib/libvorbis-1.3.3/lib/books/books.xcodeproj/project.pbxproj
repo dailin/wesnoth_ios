@@ -1,0 +1,142 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		3CBF23761644F9D8008D46F4 /* coupled */ = {isa = PBXFileReference; lastKnownFileType = folder; path = coupled; sourceTree = "<group>"; };
+		3CBF23771644F9D8008D46F4 /* floor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = floor; sourceTree = "<group>"; };
+		3CBF23781644F9D8008D46F4 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		3CBF23791644F9D8008D46F4 /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		3CBF237A1644F9D8008D46F4 /* uncoupled */ = {isa = PBXFileReference; lastKnownFileType = folder; path = uncoupled; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3CBF236E1644F9D8008D46F4 = {
+			isa = PBXGroup;
+			children = (
+				3CBF23761644F9D8008D46F4 /* coupled */,
+				3CBF23771644F9D8008D46F4 /* floor */,
+				3CBF23781644F9D8008D46F4 /* Makefile.am */,
+				3CBF23791644F9D8008D46F4 /* Makefile.in */,
+				3CBF237A1644F9D8008D46F4 /* uncoupled */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		3CBF23751644F9D8008D46F4 /* books */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 3CBF237B1644F9D8008D46F4 /* Build configuration list for PBXLegacyTarget "books" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/dailin/Wesnoth/lib/libvorbis-1.3.3/lib/books";
+			dependencies = (
+			);
+			name = books;
+			passBuildSettingsInEnvironment = 1;
+			productName = books;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		3CBF23701644F9D8008D46F4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3CBF23731644F9D8008D46F4 /* Build configuration list for PBXProject "books" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3CBF236E1644F9D8008D46F4;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CBF23751644F9D8008D46F4 /* books */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		3CBF23711644F9D8008D46F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		3CBF23721644F9D8008D46F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		3CBF237C1644F9D8008D46F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = books;
+			};
+			name = Debug;
+		};
+		3CBF237D1644F9D8008D46F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = books;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CBF23731644F9D8008D46F4 /* Build configuration list for PBXProject "books" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CBF23711644F9D8008D46F4 /* Debug */,
+				3CBF23721644F9D8008D46F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CBF237B1644F9D8008D46F4 /* Build configuration list for PBXLegacyTarget "books" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CBF237C1644F9D8008D46F4 /* Debug */,
+				3CBF237D1644F9D8008D46F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CBF23701644F9D8008D46F4 /* Project object */;
+}

@@ -1,0 +1,60 @@
+PREFIX = /Developer/Platforms/iPhoneOS.platform/Developer
+#PREFIX = /Developer/Platforms/iPhoneSimulator.platform/Developer
+
+SDKVER = 5.0
+SDK = $(PREFIX)/SDKs/iPhoneOS$(SDKVER).sdk
+
+CC := $(PREFIX)/usr/llvm-gcc-4.2/bin/arm-apple-darwin10-llvm-gcc-4.2 
+#CC := $(PREFIX)/usr/bin/llvm-gcc-4.2
+LD := $(CC)
+AR := $(PREFIX)/usr/bin/ar
+RANLIB := $(PREFIX)/usr/bin/ranlib
+
+INCPATH += -I"$(SDK)/usr/include"
+INCPATH += -I"$(PREFIX)/usr/lib/gcc/arm-apple-darwin10/4.2.1/include"
+INCPATH += -I"$(PREFIX)/usr/include"
+
+BIGFILES=-D_FILE_OFFSET_BITS=64
+MYCFLAGS=$(INCPATH) -Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES) $(CFLAGS)
+
+OBJS= blocksort.o  \
+      huffman.o    \
+      crctable.o   \
+      randtable.o  \
+      compress.o   \
+      decompress.o \
+      bzlib.o
+
+all: libbz2.a
+
+libbz2.a: $(OBJS)
+	rm -f libbz2.a
+	$(AR) cq libbz2.a $(OBJS)
+	$(RANLIB) libbz2.a ; \
+
+
+clean: 
+	rm -f *.o libbz2.a bzip2 bzip2recover \
+	sample1.rb2 sample2.rb2 sample3.rb2 \
+	sample1.tst sample2.tst sample3.tst
+
+blocksort.o: blocksort.c
+	@cat words0
+	$(CC) $(MYCFLAGS) -c blocksort.c $(LDFLAGS)
+huffman.o: huffman.c
+	$(CC) $(MYCFLAGS) -c huffman.c $(LDFLAGS)
+crctable.o: crctable.c
+	$(CC) $(MYCFLAGS) -c crctable.c $(LDFLAGS)
+randtable.o: randtable.c
+	$(CC) $(MYCFLAGS) -c randtable.c $(LDFLAGS)
+compress.o: compress.c
+	$(CC) $(MYCFLAGS) -c compress.c $(LDFLAGS)
+decompress.o: decompress.c
+	$(CC) $(MYCFLAGS) -c decompress.c $(LDFLAGS)
+bzlib.o: bzlib.c
+	$(CC) $(MYCFLAGS) -c bzlib.c $(LDFLAGS)
+bzip2.o: bzip2.c
+	$(CC) $(MYCFLAGS) -c bzip2.c $(LDFLAGS)
+bzip2recover.o: bzip2recover.c
+	$(CC) $(MYCFLAGS) -c bzip2recover.c $(LDFLAGS)
+
